@@ -20,6 +20,7 @@ Claude must read these before implementation:
 
 - `AGENTS.md` — local build law
 - `CLAUDE.md` — implementation order / hard constraints
+- `docs/BUILD-START-HERE.md` — consolidated handoff and milestones
 - `docs/IDENTITY-LOCK.md` — prevents wrong-person media/metadata contamination
 - `docs/ESMER-DOSSIER.md` — sourced Justin Esmer research
 - `docs/MEDIA-MANIFEST.json` — current media/source lookup
@@ -27,9 +28,14 @@ Claude must read these before implementation:
 - `docs/PRESS-SOURCE-REGISTER.md` — verified external-source quick register and backlink status
 - `docs/AUTHORITY-LINK-GRAPH.md` — press, search authority, structured data, internal links and backlink plan
 - `data/press-sources.json` — machine-readable press/backlink source graph
+- `data/site-seed.json` — verified implementation seed for identity, navigation, catalog, sections and pending client inputs
+- `data/domain-state.json` — domain-ownership state and non-blocking canonical-domain instructions
 - `docs/VR-SCROLL-ARCHITECTURE.md` — carved-out studio/360/Marble/VR section
 - `docs/ADMIN-BACKEND-DESIGN.md` — private Esmer tenant backend/admin product architecture
 - `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md` — approved Mobbin-derived backend design language and flows
+- `data/admin-config.json` — admin navigation, rights states, booking pipeline, roles and API-contract seed
+- `admin/README.md` — implementation handoff for the owner console
+- GitHub issue `#1` — active implementation checklist and review gate
 
 ## Canonical design direction
 
@@ -57,10 +63,14 @@ The repo contains a verified press/source graph including substantial coverage a
 
 External source research found that **Cherry Tape Magazine** and **Space Ballroom** already link Justin Esmer / Esmer to `https://www.esmermusic.com/` as his website / Official Website.
 
-Before deployment, confirm that Justin controls `esmermusic.com`.
+Current ownership/control is **unknown and pending Justin’s confirmation**.
 
-- If he controls it, prefer preserving it as the canonical public domain.
-- If a different canonical domain is intentionally selected, use permanent 301 redirects so those existing inbound links do not terminate on a dead/stale property.
+That question does **not** block the build. `data/domain-state.json` is the source of truth until Justin answers.
+
+- Keep the canonical domain centralized in configuration.
+- If he controls `esmermusic.com`, preserve that existing inbound-link equity.
+- If he does not, proceed with the selected replacement domain and update canonical metadata/backlink outreach in one controlled change.
+- Do not hard-code ownership assumptions into the UI.
 
 The machine-readable source/backlink state lives in `data/press-sources.json`.
 
@@ -86,18 +96,21 @@ Required admin modules:
 - McCluster client network
 - Settings
 
-The admin must work on phone and desktop. `docs/ADMIN-BACKEND-DESIGN.md` defines the functionality and data boundary. `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md` defines the approved visual/interaction references.
+The admin must work on phone and desktop. `docs/ADMIN-BACKEND-DESIGN.md` defines the functionality and data boundary. `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md` defines the approved visual/interaction references. `data/admin-config.json` gives Claude the implementation seed.
 
 ## Current status
 
 - Repository initialized with build law in `AGENTS.md`.
 - Claude entry instructions live in `CLAUDE.md`.
+- Consolidated implementation handoff lives in `docs/BUILD-START-HERE.md`.
 - Approved public design reference register lives in `docs/DESIGN-DIRECTION-v1.md`.
 - Identity lock and sourced research are in place.
 - Search/press authority graph and machine-readable press data are in place.
-- Existing `esmermusic.com` inbound-link equity is documented for preservation.
-- Backend/admin design, Mobbin reference board and API contract are in place.
+- Verified public-site seed data are in `data/site-seed.json`.
+- Existing `esmermusic.com` inbound-link equity is documented; ownership remains pending and non-blocking.
+- Backend/admin design, Mobbin reference board, admin config and API contract are in place.
 - Esmer is registered as a McCluster client satellite in the control-plane registry.
+- GitHub issue `#1` tracks the first public-shell and owner-console milestones.
 - Studio media, final 360 capture, Marble/spatial world, final services, rates, confirmed canonical-domain control, booking destination, approved artist assets, and final PRIM3 credit language are pending.
 
 ## On-site capture checklist

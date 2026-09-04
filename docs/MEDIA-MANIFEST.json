@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "updated": "2026-09-04",
+  "purpose": "Single media/reference lookup for the Esmer build so the builder does not need to search before starting.",
+  "rules": {
+    "publicPressMediaIsReferenceOnly": true,
+    "doNotShipUnlicensedPressPhotos": true,
+    "doNotDownloadOrRehostStreamingAudio": true,
+    "clientSuppliedAndEsmerApprovedAssetsOverrideRemoteReferences": true,
+    "noStockSubstitutesForMissingStudioMedia": true,
+    "noNiteRiotReferences": true
+  },
+  "artist": {
+    "name": "Esmer",
+    "publicName": "Justin Esmer",
+    "appleMusicArtistId": "1542619015",
+    "appleMusicUrl": "https://music.apple.com/us/artist/esmer/1542619015",
+    "artworkTemplate": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/49/42/d1/4942d1e5-d7df-0bbc-04d2-5117175aaf11/ami-identity-3ea82b74c0ac463a6c2a2f1696957f87-2026-03-02T16-53-42.784Z_cropped.png/{w}x{h}{c}.{f}",
+    "artworkReference1200": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages211/v4/49/42/d1/4942d1e5-d7df-0bbc-04d2-5117175aaf11/ami-identity-3ea82b74c0ac463a6c2a2f1696957f87-2026-03-02T16-53-42.784Z_cropped.png/1200x1200bb.png"
+  },
+  "officialMusicArtwork": [
+    {
+      "id": "my-everything-2026",
+      "title": "My Everything - Single",
+      "releaseDate": "2026-01-09",
+      "appleMusic": "https://music.apple.com/us/album/my-everything-single/1866156580",
+      "artworkTemplate": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1e/4b/80/1e4b8067-8cb2-306b-c224-545cc2dc1a85/artwork.jpg/{w}x{h}{c}.{f}",
+      "artworkReference1200": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1e/4b/80/1e4b8067-8cb2-306b-c224-545cc2dc1a85/artwork.jpg/1200x1200bb.jpg",
+      "shipStatus": "use platform embed/link or Esmer-supplied master artwork; reference image alone is not a rights clearance"
+    },
+    {
+      "id": "dive-in-gravitate-2025",
+      "title": "Dive In // Gravitate - Single",
+      "releaseDate": "2025-07-28",
+      "appleMusic": "https://music.apple.com/us/album/dive-in-gravitate-single/1828237962",
+      "hyperFollow": "https://distrokid.com/hyperfollow/esmer/dive-in--gravitate",
+      "artworkTemplate": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d9/be/cb/d9becbd3-db4e-0c96-65a2-50f4b4699b4b/artwork.jpg/{w}x{h}{c}.{f}",
+      "artworkReference1200": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d9/be/cb/d9becbd3-db4e-0c96-65a2-50f4b4699b4b/artwork.jpg/1200x1200bb.jpg"
+    },
+    {
+      "id": "heather-2025",
+      "title": "Heather - Single",
+      "releaseDate": "2025-05-04",
+      "appleMusic": "https://music.apple.com/us/album/heather-single/1811009075",
+      "artworkTemplate": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/12/a2/0f12a215-c8d1-c717-836c-9b56f0e9ebe3/artwork.jpg/{w}x{h}{c}.{f}",
+      "artworkReference1200": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/12/a2/0f12a215-c8d1-c717-836c-9b56f0e9ebe3/artwork.jpg/1200x1200bb.jpg"
+    },
+    {
+      "id": "ycantuc-2025",
+      "title": "YCANTUC - Single",
+      "releaseDate": "2025-01-28",
+      "appleMusic": "https://music.apple.com/us/album/ycantuc-single/1792113491",
+      "artworkTemplate": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/42/20/94/422094e3-6611-890d-f16d-0a7b186aab0e/artwork.jpg/{w}x{h}{c}.{f}",
+      "artworkReference1200": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/42/20/94/422094e3-6611-890d-f16d-0a7b186aab0e/artwork.jpg/1200x1200bb.jpg"
+    },
+    {
+      "id": "achilles-heel-2024",
+      "title": "Achilles Heel - EP",
+      "releaseDate": "2024-08-30",
+      "appleMusic": "https://music.apple.com/us/album/achilles-heel-ep/1764061285",
+      "hyperFollow": "https://distrokid.com/hyperfollow/esmer/achilles-heel-2",
+      "artworkTemplate": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/51/d9/05/51d90537-f171-f1f1-b90d-05730564cdfb/artwork.jpg/{w}x{h}{c}.{f}",
+      "artworkReference1200": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/51/d9/05/51d90537-f171-f1f1-b90d-05730564cdfb/artwork.jpg/1200x1200bb.jpg"
+    },
+    {
+      "id": "train-stops-2023",
+      "title": "Train Stops - EP",
+      "releaseDate": "2023-12-08",
+      "appleMusic": "https://music.apple.com/us/album/train-stops-ep/1716772604",
+      "artworkTemplate": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/f5/90/56/f5905676-ea51-60d0-cc2e-0a698fe3728f/artwork.jpg/{w}x{h}{c}.{f}",
+      "artworkReference1200": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/f5/90/56/f5905676-ea51-60d0-cc2e-0a698fe3728f/artwork.jpg/1200x1200bb.jpg"
+    },
+    {
+      "id": "ponyo-2023",
+      "title": "Ponyo - Single",
+      "releaseDate": "2023-01-11",
+      "appleMusic": "https://music.apple.com/us/album/ponyo-single/1663071890",
+      "artworkTemplate": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/e1/ab/5d/e1ab5d8d-5e9f-618a-3379-d7497e704c2e/artwork.jpg/{w}x{h}{c}.{f}",
+      "artworkReference1200": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/e1/ab/5d/e1ab5d8d-5e9f-618a-3379-d7497e704c2e/artwork.jpg/1200x1200bb.jpg"
+    },
+    {
+      "id": "rotten-2022",
+      "title": "Rotten - EP",
+      "releaseDate": "2022-10-10",
+      "appleMusic": "https://music.apple.com/us/album/rotten-ep/1647655042",
+      "artworkTemplate": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/27/85/03/27850312-9df5-7a13-ea28-e7164974ba71/artwork.jpg/{w}x{h}{c}.{f}",
+      "artworkReference1200": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/27/85/03/27850312-9df5-7a13-ea28-e7164974ba71/artwork.jpg/1200x1200bb.jpg"
+    }
+  ],
+  "pressPhotoReferences": [
+    {
+      "source": "Your Favorite Groupies — Achilles Heel interview",
+      "sourceUrl": "https://www.yourfavoritegroupies.com/blog/blvm07427i5l5tvff7hn8fpl18vcop",
+      "credit": "Mishel Noboa / source publication; verify each image credit before any reuse",
+      "referenceOnly": true,
+      "images": [
+        "https://images.squarespace-cdn.com/content/v1/654bc9b837b52d3d563789d7/67658109-626e-4ac4-a91f-809f4d10b09a/esmer-10.jpg",
+        "https://images.squarespace-cdn.com/content/v1/654bc9b837b52d3d563789d7/3c26b040-c428-462b-aba4-508ce643f80a/tempImageFQ9zYq.jpg",
+        "https://images.squarespace-cdn.com/content/v1/654bc9b837b52d3d563789d7/2b0fc556-272e-4e33-9c34-a26605479607/esmer-40.jpg",
+        "https://images.squarespace-cdn.com/content/v1/654bc9b837b52d3d563789d7/e59fe2e1-1039-4a6c-af84-2e3bdfbe0c22/esmer-27.jpg",
+        "https://images.squarespace-cdn.com/content/v1/654bc9b837b52d3d563789d7/37cd40e6-f709-4d3c-954b-a03e6e1446bd/esmer-46.jpg",
+        "https://images.squarespace-cdn.com/content/v1/654bc9b837b52d3d563789d7/d75ae196-0ae2-48e3-ae80-a6d877475b3d/esmer-20.jpg",
+        "https://images.squarespace-cdn.com/content/v1/654bc9b837b52d3d563789d7/13ece379-2b79-4c60-876c-6c2eb087ae5a/esmer-47.jpg",
+        "https://images.squarespace-cdn.com/content/v1/654bc9b837b52d3d563789d7/1c7f90eb-f656-453d-b00e-dbc9e0595e53/esmer-14.jpg",
+        "https://images.squarespace-cdn.com/content/v1/654bc9b837b52d3d563789d7/2384a300-123b-4aca-93f5-2b4d466d546b/esmer-34.jpg"
+      ]
+    },
+    {
+      "source": "Cafeteria Media — Achilles Heel release coverage",
+      "sourceUrl": "https://www.cafeteria.fm/home/esmer-achilles-heel",
+      "credit": "Article identifies event photos/video as courtesy of @JunglexJulia; verify individual rights before reuse",
+      "referenceOnly": true,
+      "images": [
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/5bcd5d01-a15c-4435-8df3-33540aced6f1/60E2F44E-4AEB-4378-B9F6-49AC4C4F3741.JPG",
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/1725651245477-SGMWZGZ7QIZWIOYTM3X4/IMG_4581.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/1725651223770-BEM82C80YHVZ1QTEOTFM/IMG_4551.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/1725651244649-HT3ZKWNI92JOSU8783ET/IMG_4571.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/1725651250609-DIOZC84TD2ZC04658JGC/IMG_4619.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/1725651251621-4F0OI4INXHRQGTFFOQF8/IMG_4624.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/1725651241721-2OJ0Q28LMSSLLRS2TCHS/IMG_4562.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/1725651247643-LF6UD0KI15VYX05U553Z/IMG_4596.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/1725651248553-R6UHZHD46HB7INNNGCM2/IMG_4601.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/1725651221862-HSQNM7NZIGVFIQNKQZOC/IMG_4546.jpeg",
+        "https://images.squarespace-cdn.com/content/v1/5eb6ceb88816b45bb58e5e55/a9bf85e3-4100-412b-8ade-5c1fef99888a/7515DDBE-B82A-4922-AAA3-3DA9148955B5.JPG"
+      ]
+    },
+    {
+      "source": "The Daily Campus — The Music Never Stops: Esmer",
+      "sourceUrl": "https://dailycampus.com/2024/10/09/the-music-never-stops-esmer/",
+      "credit": "Alejandro/Lopez per article caption",
+      "referenceOnly": true,
+      "images": [
+        "https://i0.wp.com/dailycampus.com/wp-content/uploads/2024/10/alejandro-lopez-_r0mZJ5QjXU-unsplash.jpg?resize=696%2C463&ssl=1"
+      ]
+    }
+  ],
+  "pressAndVideoSourcePages": [
+    {
+      "title": "The Music Never Stops: Esmer",
+      "url": "https://dailycampus.com/2024/10/09/the-music-never-stops-esmer/",
+      "use": "bio, process, live-performance chronology, source photography reference"
+    },
+    {
+      "title": "An Inside Look at Justin Esmer's Journey with Achilles Heel",
+      "url": "https://www.yourfavoritegroupies.com/blog/blvm07427i5l5tvff7hn8fpl18vcop",
+      "use": "long-form process story, multiple Esmer photos, personal history, influences"
+    },
+    {
+      "title": "ESMER PRESENTS: ACHILLES HEEL",
+      "url": "https://www.cafeteria.fm/home/esmer-achilles-heel",
+      "use": "release-event photo set, recording image, embedded/event video reference, release-story context"
+    },
+    {
+      "title": "Space Ballroom — Similar Kind / Esmer",
+      "url": "https://spaceballroom.com/e/similar-kind-1296867468509/",
+      "use": "live-booking/public venue-bio reference"
+    },
+    {
+      "title": "New Haven Arts — Coffeehouse Open Mic",
+      "url": "https://www.newhavenarts.org/arts-paper/articles/a-coffeehouse-open-mic-for-comprehensive-care",
+      "use": "recent 2026 performance footprint"
+    }
+  ],
+  "approvedDesignReferences": [
+    {
+      "name": "Client anchor — Ciarán Logs",
+      "decision": "KEEP AS VISUAL-LANGUAGE ANCHOR",
+      "url": "https://ciar-an.co/logs",
+      "localStatus": "client-supplied URL; use for editorial/art-book mood, not cloning"
+    },
+    {
+      "name": "Freshman — Danik Bartolini",
+      "decision": "KEEP",
+      "mobbinUrl": "https://mobbin.com/sites/sections/cc46fe95-d2fb-46a6-927a-96c9bc6d5ecc",
+      "imageUrl": "https://mobbin.com/api/mcp/short/HKX3QeGP",
+      "use": "oversized name typography, portrait scale contrast, editorial restraint, open space"
+    },
+    {
+      "name": "TIDAL — immersive artist video / Unplugged",
+      "decision": "KEEP",
+      "mobbinUrl": "https://mobbin.com/sites/sections/ad61ebfa-c138-4341-924b-3e49cd40f302",
+      "imageUrl": "https://mobbin.com/api/mcp/short/k1tz99BU",
+      "use": "full-bleed studio/performance video, sparse copy, scroll entry"
+    },
+    {
+      "name": "Studio Freight — experimental gallery",
+      "decision": "KEEP LIMITED",
+      "mobbinUrl": "https://mobbin.com/sites/sections/2f12827e-5e12-4f35-9bc8-93d914ff9695",
+      "imageUrl": "https://mobbin.com/api/mcp/short/CEkZjj42",
+      "use": "logs/session/archive spatial composition; do not copy desktop interaction"
+    },
+    {
+      "name": "Studio Freight — inquiry",
+      "decision": "KEEP",
+      "mobbinUrl": "https://mobbin.com/sites/sections/4496ab63-aada-4e07-933b-c32a13e535b5",
+      "imageUrl": "https://mobbin.com/api/mcp/short/DHMzVxHQ",
+      "use": "dark restrained inquiry/booking treatment"
+    },
+    {
+      "name": "Lightship — contact flow",
+      "decision": "KEEP FLOW, REJECT VISUAL SYSTEM",
+      "mobbinUrl": "https://mobbin.com/sites/sections/0791334e-985a-4902-b866-3be56684576c",
+      "imageUrl": "https://mobbin.com/api/mcp/short/VnMphS9G",
+      "use": "reason for inquiry -> contact preference -> identity -> message"
+    },
+    {
+      "name": "Spotify — artist mobile screen",
+      "decision": "KEEP FUNCTION ONLY",
+      "mobbinUrl": "https://mobbin.com/screens/a846a007-3e3e-44c8-ba26-3452d610700a",
+      "imageUrl": "https://mobbin.com/api/mcp/short/xTnQPwhF",
+      "use": "persistent mini-player, immediate artist context, return-to-playback behavior"
+    },
+    {
+      "name": "SoundCloud — artist mobile screen",
+      "decision": "KEEP FUNCTION ONLY",
+      "mobbinUrl": "https://mobbin.com/screens/bab76b2b-aaa3-4b9c-92fb-d5dfa8236eaa",
+      "imageUrl": "https://mobbin.com/api/mcp/short/DlMCcHH2",
+      "use": "top-track hierarchy, artist context, persistent player behavior"
+    }
+  ],
+  "rejectedDesignReferences": [
+    {
+      "name": "Nite Riot",
+      "decision": "REJECTED — DO NOT USE"
+    },
+    {
+      "name": "Poolsuite player",
+      "decision": "REJECT VISUAL SYSTEM",
+      "reason": "too themed/skeuomorphic for Esmer's photography-led identity"
+    },
+    {
+      "name": "Deezer marketing landing treatment",
+      "decision": "REJECT VISUAL SYSTEM",
+      "reason": "too platform-marketing/generic; does not match client editorial direction"
+    }
+  ],
+  "pendingStudioCapture": {
+    "status": "NOT CAPTURED YET",
+    "expectedFolders": [
+      "assets/studio/originals",
+      "assets/studio/photos",
+      "assets/studio/video",
+      "assets/studio/360",
+      "assets/studio/models",
+      "assets/studio/posters"
+    ],
+    "needed": [
+      "portrait set",
+      "room wides from overlapping positions",
+      "slow stabilized video passes",
+      "360 capture",
+      "Esmer singing / playing / producing",
+      "hands on controls and instruments",
+      "empty-room ambient shots",
+      "approved gear details",
+      "clean room tone / optional spoken intro",
+      "Marble/spatial-world output when produced"
+    ]
+  }
+}

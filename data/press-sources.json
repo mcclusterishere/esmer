@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "updated": "2026-09-04",
+  "identity": {
+    "publicName": "Justin Esmer",
+    "artistName": "Esmer",
+    "appleMusicArtistId": "1542619015",
+    "identityLock": "docs/IDENTITY-LOCK.md"
+  },
+  "canonicalDomainStrategy": {
+    "observedOfficialDomain": "https://www.esmermusic.com/",
+    "status": "externally linked by reputable existing sources; confirm control before deployment",
+    "rule": "If Esmer controls esmermusic.com, preserve it as the canonical domain or 301 redirect it to any replacement canonical domain. Do not throw away existing inbound-link equity.",
+    "confirmedInboundLinks": [
+      {
+        "source": "Cherry Tape Magazine",
+        "sourceUrl": "https://cherrytapemag.com/welcome-to-ct-see-the-scene/",
+        "linkContext": "Justin Esmer heading links to https://www.esmermusic.com/"
+      },
+      {
+        "source": "Space Ballroom",
+        "sourceUrl": "https://spaceballroom.com/e/similar-kind-1296867468509/",
+        "linkContext": "ESMER section lists Official Website -> https://www.esmermusic.com/"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "daily-campus-esmer-2024",
+      "publisher": "The Daily Campus",
+      "headline": "The Music Never Stops: Esmer",
+      "author": "Dan Stark",
+      "publicationDate": "2024-10-09",
+      "url": "https://dailycampus.com/2024/10/09/the-music-never-stops-esmer/",
+      "type": "profile",
+      "confidence": "high",
+      "directSubject": true,
+      "summary": "Direct profile identifying Justin Esmer as Esmer, a Hamden singer-songwriter and guitarist, with discussion of his songwriting, collaborative production, Achilles Heel and Connecticut live activity.",
+      "recommendedUse": ["press-card", "bio-source", "subjectOf", "live-chronology"],
+      "backlinkStatus": "not confirmed",
+      "backlinkAction": "After launch, request an official-site link if editorial policy allows."
+    },
+    {
+      "id": "yfg-achilles-heel-2024",
+      "publisher": "Your Favorite Groupies",
+      "headline": "An Inside Look at Justin Esmer’s Journey with Achilles Heel",
+      "author": "Mishel Noboa",
+      "publicationDate": null,
+      "dateNote": "Page displays Sep 12; verify year before emitting Article datePublished schema.",
+      "url": "https://www.yourfavoritegroupies.com/blog/blvm07427i5l5tvff7hn8fpl18vcop",
+      "type": "long-form-interview",
+      "confidence": "high",
+      "directSubject": true,
+      "summary": "Direct Justin Esmer interview covering instrument history, Southern Connecticut context, artist-name origin, collaboration, Achilles Heel production and future music plans.",
+      "recommendedUse": ["press-card", "process-source", "bio-source", "subjectOf", "logs-source"],
+      "backlinkStatus": "not confirmed",
+      "backlinkAction": "Strong candidate for adding the official site to the artist intro/resources area after launch."
+    },
+    {
+      "id": "cherry-tape-ct-scene-2023",
+      "publisher": "Cherry Tape Magazine",
+      "headline": "Welcome to CT: See the Scene",
+      "author": "Matthew Spence",
+      "publicationDate": "2023-09-01",
+      "url": "https://cherrytapemag.com/welcome-to-ct-see-the-scene/",
+      "type": "scene-interview",
+      "confidence": "high",
+      "directSubject": true,
+      "summary": "Contains a dedicated Justin Esmer section with direct answers about Connecticut music community and his own description of his sound.",
+      "recommendedUse": ["press-card", "community-source", "subjectOf", "artist-voice-source"],
+      "backlinkStatus": "confirmed",
+      "backlinkTarget": "https://www.esmermusic.com/",
+      "backlinkAction": "Preserve the target via canonical deployment or 301 redirect if the domain changes."
+    },
+    {
+      "id": "cafeteria-achilles-heel-2024",
+      "publisher": "Cafeteria Media",
+      "headline": "ESMER PRESENTS: ACHILLES HEEL",
+      "author": "Jungle Julia",
+      "publicationDate": "2024-09-07",
+      "url": "https://www.cafeteria.fm/home/esmer-achilles-heel",
+      "type": "release-feature",
+      "confidence": "high",
+      "directSubject": true,
+      "summary": "Direct release feature on Achilles Heel covering the five-track EP, collaboration, recording and mixing effort, cover-art context and release-event/community response.",
+      "recommendedUse": ["press-card", "release-source", "subjectOf", "logs-source"],
+      "backlinkStatus": "not confirmed",
+      "backlinkAction": "Request the official site in the existing keep-up-with-Esmer area if appropriate."
+    },
+    {
+      "id": "nhi-heather-2025",
+      "publisher": "New Haven Independent",
+      "headline": "Esmer Returns Home With ‘Heather’",
+      "author": "Jisu Sheen",
+      "publicationDate": "2025-05-06",
+      "url": "https://www.newhavenindependent.org/2025/05/06/esmer_returns_home_with_heather/",
+      "type": "direct-release-feature",
+      "confidence": "high",
+      "directSubject": true,
+      "summary": "Direct feature on Esmer and Heather, covering the song’s construction, collaborators, visual release work and the personal circumstances surrounding the recording period.",
+      "recommendedUse": ["press-card", "heather-release-source", "subjectOf", "process-source"],
+      "backlinkStatus": "not confirmed",
+      "backlinkAction": "High-priority legitimate official-site update request after launch if the publication permits artist links."
+    },
+    {
+      "id": "space-ballroom-2022",
+      "publisher": "Space Ballroom",
+      "headline": "Pond View / RETROSOLO — T!LT, Esmer, superposition",
+      "publicationDate": "2022-10-23",
+      "url": "https://spaceballroom.com/e/pond-view-retrosolo-440361070817/",
+      "type": "venue-billing",
+      "confidence": "high",
+      "directSubject": false,
+      "summary": "Venue billing identifies Esmer as Justin Esmer and documents an early live-band lineup and artist bio.",
+      "recommendedUse": ["live-chronology", "event-source", "identity-corroboration"],
+      "backlinkStatus": "no official-site link shown for Esmer on this archived 2022 page"
+    },
+    {
+      "id": "space-ballroom-2025",
+      "publisher": "Space Ballroom",
+      "headline": "Similar Kind — Esmer, Brooke Dougan",
+      "publicationDate": "2025-06-07",
+      "url": "https://spaceballroom.com/e/similar-kind-1296867468509/",
+      "type": "venue-billing",
+      "confidence": "high",
+      "directSubject": false,
+      "summary": "Recent venue billing contains an Esmer artist bio, current live-band context and an explicit Official Website field.",
+      "recommendedUse": ["live-chronology", "event-source", "identity-corroboration"],
+      "backlinkStatus": "confirmed",
+      "backlinkTarget": "https://www.esmermusic.com/",
+      "backlinkAction": "Preserve the target via canonical deployment or 301 redirect."
+    },
+    {
+      "id": "new-haven-arts-care-out-loud-2026",
+      "publisher": "Arts Council of Greater New Haven / New Haven Arts",
+      "headline": "A Coffeehouse Open Mic, For Comprehensive Care",
+      "author": "Solé Scott",
+      "publicationDate": "2026-05-03",
+      "url": "https://www.newhavenarts.org/arts-paper/articles/a-coffeehouse-open-mic-for-comprehensive-care",
+      "type": "local-arts-coverage",
+      "confidence": "high",
+      "directSubject": false,
+      "summary": "Recent New Haven performance coverage names Justin Esmer and describes his guitar performance and vocal effects/harmonizer use.",
+      "recommendedUse": ["press-card", "live-chronology", "subjectOf"],
+      "backlinkStatus": "not confirmed"
+    },
+    {
+      "id": "midbrow-sb-khi-2025",
+      "publisher": "Midbrow",
+      "headline": "New Single Processes Dive Bar Encounter",
+      "author": "Jisu Sheen",
+      "publicationDate": "2025-03-20",
+      "url": "https://midbrow.org/new-single-processes-dive-bar-encounter/",
+      "type": "scene-collaborator-feature",
+      "confidence": "high",
+      "directSubject": false,
+      "summary": "Contextual feature identifies SB Khi touring with the band Esmer led by frontman Justin Esmer.",
+      "recommendedUse": ["scene-source", "band-leader-corroboration"],
+      "backlinkStatus": "not confirmed"
+    },
+    {
+      "id": "midbrow-pandemic-performers-2025",
+      "publisher": "Midbrow",
+      "headline": "Pandemic-Honed Performers Broke Out In 2025",
+      "author": "Jisu Sheen",
+      "publicationDate": "2025-12-23",
+      "url": "https://midbrow.org/pandemic-honed-performers-broke-out-in-2025/",
+      "type": "scene-retrospective",
+      "confidence": "high",
+      "directSubject": false,
+      "summary": "Retrospective discusses Justin Esmer, Deathbed, Achilles Heel production context, Heather and the collaborative New Haven music ecosystem.",
+      "recommendedUse": ["scene-source", "subjectOf", "release-context"],
+      "backlinkStatus": "not confirmed"
+    },
+    {
+      "id": "scsu-deans-list-2026",
+      "publisher": "Southern Connecticut State University",
+      "headline": "Dean’s and President’s Lists Announced for Spring 2026",
+      "publicationDate": "2026-06-03",
+      "url": "https://news.southernct.edu/2026/06/03/deans-and-presidents-lists-announced-for-spring-2026/",
+      "type": "institutional-record",
+      "confidence": "high-with-project-confirmation",
+      "directSubject": false,
+      "summary": "Lists Justin Esmer in the College of Arts & Sciences; use as identity corroboration, not as a music press card unless Esmer wants education surfaced.",
+      "recommendedUse": ["identity-corroboration"],
+      "backlinkStatus": "not applicable"
+    }
+  ]
+}

@@ -23,8 +23,12 @@
     "inquiries": "/v1/inquiries",
     "org": "esmer"
   },
-  "_bookServicesNote": "docs/DESIGN-DIRECTION-v1.md §7 lists these as categories to CONFIRM with Esmer, and CLAUDE.md forbids guessing services. They ship as inquiry categories only — no capability claim, no rate, no turnaround promise attached to any of them.",
+  "_bookServicesNote": "docs/DESIGN-DIRECTION-v1.md §7 lists these as categories to CONFIRM with Esmer, and CLAUDE.md forbids guessing services. They ship as inquiry categories only — no capability claim, no rate, no turnaround promise attached to any of them. TEACHING: confirmed directly by Matthew McCluster on 2026-09-04 — Esmer is a music teacher and Book is not artist-booking only. That is an authorised source under docs/IDENTITY-LOCK.md verification rule 3, so lessons lead this list. What he teaches (instruments, voice, production, songwriting), whether lessons are in person, online or both, and any age or level range are all still unconfirmed and must not be inferred from the instruments he plays in docs/ESMER-DOSSIER.md §2.",
   "bookServices": [
+    {
+      "id": "lessons",
+      "label": "Lessons / teaching"
+    },
     {
       "id": "recording",
       "label": "Recording"

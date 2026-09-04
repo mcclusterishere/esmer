@@ -148,6 +148,7 @@ Gaps left open on purpose; filling them by guessing breaks this repo's rules.
 | Typeface | None approved; unlicensed fonts forbidden. System stack, swappable via one CSS token | Approval |
 | Colour accent | Palette is achromatic so Esmer's own artwork supplies the colour | Artwork |
 | Rates | `CLAUDE.md` §16 — do not guess | Esmer |
+| What Esmer teaches | Teaching is confirmed (Matthew, 2026-09-04) and Book leads with it. What he teaches, in person or online, and any level range are not confirmed — and must not be inferred from the instruments he plays in the dossier | Esmer |
 | Fallback contact address | Booking destination is on the approval list; shown only if the API fails | Esmer |
 | Studio room, gear, address | Not captured; never invented | On-site capture |
 | Spatial / VR studio | Slot carved into the architecture, loads no 3D | Capture |

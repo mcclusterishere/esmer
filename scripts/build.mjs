@@ -149,7 +149,7 @@ const personSchema = {
   name: site.publicName,
   alternateName: site.artistName,
   url: `${ORIGIN}/`,
-  jobTitle: ['Singer-songwriter', 'Producer', 'Multi-instrumentalist'],
+  jobTitle: ['Singer-songwriter', 'Producer', 'Multi-instrumentalist', 'Music teacher'],
   sameAs: site.sameAs,
   homeLocation: { '@type': 'Place', name: 'Connecticut, United States' }
 };
@@ -223,7 +223,7 @@ const releases = catalog.releases;
 const latest = releases[0];
 
 const ENTITY_LEDE =
-  `${site.publicName} performs as ${site.artistName} — a Connecticut singer-songwriter, guitarist, vocalist, producer and multi-instrumentalist.`;
+  `${site.publicName} performs as ${site.artistName} — a Connecticut singer-songwriter, guitarist, vocalist, producer, multi-instrumentalist and music teacher.`;
 
 function home() {
   const body = `
@@ -259,6 +259,7 @@ function home() {
     <div class="reveal">
       <p class="lede">Guitar-led songwriting, close harmony and a low, unhurried vocal. Recorded and released independently on ${esc(site.label)} since 2022.</p>
       <p>Public coverage places his roots in Hamden and New Haven. He plays regularly across Connecticut, and the records have moved steadily from something made alone toward something made with other people in the room.</p>
+      <p>He also teaches. The same ear that shapes the records is available to people learning to make their own.</p>
       <p><a class="release__link" href="/press/">Read the press</a></p>
     </div>
   </div>
@@ -327,9 +328,9 @@ function home() {
 <section class="band">
   <div class="wrap">
     <p class="eyebrow">Work together</p>
-    <h2 class="h-section">Book Esmer</h2>
-    <p class="lede">Recording, production, session support, performance and collaboration.</p>
-    <p><a class="btn" href="/book/">Start an inquiry</a></p>
+    <h2 class="h-section">Lessons &amp; sessions</h2>
+    <p class="lede">Esmer teaches, and he records. Lessons, production, session support, performance and collaboration.</p>
+    <div class="actions"><a class="btn" href="/book/">Start an inquiry</a></div>
   </div>
 </section>`;
 
@@ -555,7 +556,7 @@ function bookPage() {
   <div class="wrap">
     <p class="eyebrow">Book</p>
     <h1 class="h-section">Start an inquiry</h1>
-    <p class="lede">Tell Esmer what you are making. He replies by email.</p>
+    <p class="lede">Whether you want to learn or you want to record — tell Esmer what you need. He replies by email.</p>
   </div>
 </section>
 
@@ -604,7 +605,7 @@ function bookPage() {
     </form>
 
     <p class="meta" style="margin-top:3rem;max-width:46ch;line-height:1.9">
-      Rates are discussed per project. Nothing is charged through this form.
+      Rates are agreed directly with Esmer. Nothing is charged through this form.
     </p>
   </div>
 </section>`;
@@ -612,7 +613,7 @@ function bookPage() {
   return page({
     path: '/book/',
     title: `Book — ${site.artistName}`,
-    description: `Inquire about recording, production, session support, performance and collaboration with ${site.publicName}.`,
+    description: `Music lessons with ${site.publicName}, plus recording, production, session support, performance and collaboration.`,
     active: 'book',
     body,
     schema: [personSchema],

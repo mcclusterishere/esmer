@@ -24,9 +24,12 @@ Claude must read these before implementation:
 - `docs/ESMER-DOSSIER.md` — sourced Justin Esmer research
 - `docs/MEDIA-MANIFEST.json` — current media/source lookup
 - `docs/DESIGN-DIRECTION-v1.md` — approved public visual/UX direction
+- `docs/PRESS-SOURCE-REGISTER.md` — verified external-source quick register and backlink status
 - `docs/AUTHORITY-LINK-GRAPH.md` — press, search authority, structured data, internal links and backlink plan
+- `data/press-sources.json` — machine-readable press/backlink source graph
 - `docs/VR-SCROLL-ARCHITECTURE.md` — carved-out studio/360/Marble/VR section
-- `docs/ADMIN-BACKEND-DESIGN.md` — private Esmer tenant backend/admin design and functionality
+- `docs/ADMIN-BACKEND-DESIGN.md` — private Esmer tenant backend/admin product architecture
+- `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md` — approved Mobbin-derived backend design language and flows
 
 ## Canonical design direction
 
@@ -48,9 +51,20 @@ Key direction:
 
 The finished property should become the strongest canonical first-party entity for searches around **Justin Esmer / Esmer**.
 
-The repo now contains a verified press/source graph including substantial coverage and references from The Daily Campus, Your Favorite Groupies, Cherry Tape Magazine, Cafeteria Media, Space Ballroom, New Haven Arts, Midbrow, Southern Connecticut State University and the official music catalog. Claude should use these as citations/source authority, not copy their text or media without rights.
+The repo contains a verified press/source graph including substantial coverage and references from The Daily Campus, Your Favorite Groupies, Cherry Tape Magazine, Cafeteria Media, New Haven Independent, Space Ballroom, New Haven Arts, Midbrow, Southern Connecticut State University and the official music catalog. Claude should use these as citations/source authority, not copy their text or media without rights.
 
-Third-party backlinks cannot be manufactured inside this repo. `docs/AUTHORITY-LINK-GRAPH.md` defines the legitimate post-launch outreach queue for asking existing publishers/venues to add or update Esmer's official-site link.
+### Existing backlink/domain equity
+
+External source research found that **Cherry Tape Magazine** and **Space Ballroom** already link Justin Esmer / Esmer to `https://www.esmermusic.com/` as his website / Official Website.
+
+Before deployment, confirm that Justin controls `esmermusic.com`.
+
+- If he controls it, prefer preserving it as the canonical public domain.
+- If a different canonical domain is intentionally selected, use permanent 301 redirects so those existing inbound links do not terminate on a dead/stale property.
+
+The machine-readable source/backlink state lives in `data/press-sources.json`.
+
+Third-party backlinks cannot be manufactured inside this repo. `docs/AUTHORITY-LINK-GRAPH.md` defines the legitimate post-launch outreach queue for publications that already covered Esmer but do not currently link his official site.
 
 ## Private Esmer backend
 
@@ -72,18 +86,19 @@ Required admin modules:
 - McCluster client network
 - Settings
 
-The admin must work on phone and desktop. See `docs/ADMIN-BACKEND-DESIGN.md`.
+The admin must work on phone and desktop. `docs/ADMIN-BACKEND-DESIGN.md` defines the functionality and data boundary. `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md` defines the approved visual/interaction references.
 
 ## Current status
 
 - Repository initialized with build law in `AGENTS.md`.
 - Claude entry instructions live in `CLAUDE.md`.
-- Approved design reference register lives in `docs/DESIGN-DIRECTION-v1.md`.
+- Approved public design reference register lives in `docs/DESIGN-DIRECTION-v1.md`.
 - Identity lock and sourced research are in place.
-- Search/press authority graph is in place.
-- Backend/admin design and API contract are in place.
+- Search/press authority graph and machine-readable press data are in place.
+- Existing `esmermusic.com` inbound-link equity is documented for preservation.
+- Backend/admin design, Mobbin reference board and API contract are in place.
 - Esmer is registered as a McCluster client satellite in the control-plane registry.
-- Studio media, final 360 capture, Marble/spatial world, final services, rates, domain, booking destination, approved artist assets, and final PRIM3 credit language are pending.
+- Studio media, final 360 capture, Marble/spatial world, final services, rates, confirmed canonical-domain control, booking destination, approved artist assets, and final PRIM3 credit language are pending.
 
 ## On-site capture checklist
 

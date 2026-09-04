@@ -6,24 +6,30 @@ Claude: this file is the handoff. The research and design work has already been 
 
 1. `AGENTS.md`
 2. `CLAUDE.md`
-3. `docs/DESIGN-DIRECTION-v1.md`
-4. `docs/ESMER-DOSSIER.md`
-5. `docs/MEDIA-MANIFEST.json`
-6. `docs/VR-SCROLL-ARCHITECTURE.md`
-7. `docs/WEBSITE-STUDIO-BARTER-AGREEMENT-DRAFT.md` for ownership/scope boundaries only; do not convert legal language into public marketing copy
-8. Current upstream `mcclusterishere/mccluster/AGENTS.md` and `docs/control-plane/ECOSYSTEM.md`
+3. `docs/IDENTITY-LOCK.md`
+4. `docs/DESIGN-DIRECTION-v1.md`
+5. `docs/ESMER-DOSSIER.md`
+6. `docs/MEDIA-MANIFEST.json`
+7. `docs/PRESS-SOURCE-REGISTER.md`
+8. `docs/AUTHORITY-LINK-GRAPH.md`
+9. `data/press-sources.json`
+10. `docs/ADMIN-BACKEND-DESIGN.md`
+11. `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md`
+12. `docs/VR-SCROLL-ARCHITECTURE.md`
+13. `docs/WEBSITE-STUDIO-BARTER-AGREEMENT-DRAFT.md` for ownership/scope boundaries only; do not convert legal language into public marketing copy
+14. Current upstream `mcclusterishere/mccluster/AGENTS.md`, `CLAUDE.md`, `docs/control-plane/ECOSYSTEM.md`, and `docs/control-plane/SATELLITE.md`
 
-If these files answer the question, **do not perform fresh external research**. Search only when a manifest link is dead, information must be refreshed for launch, or Matthew McCluster explicitly asks for new research.
+If these files answer the question, **do not perform fresh external research**. Search only when a manifest/source link is dead, information must be refreshed for launch, or Matthew McCluster explicitly asks for new research.
 
 ---
 
 ## Product in one sentence
 
-Build Esmer a **mobile-first artist / producer world** with the cinematic scroll discipline and infrastructure relationship of McCluster, but an unmistakably independent Esmer identity built from his music, photography, editorial references, studio, and voice.
+Build Esmer a **mobile-first artist / producer world** with the cinematic scroll discipline and infrastructure relationship of McCluster, but an unmistakably independent Esmer identity built from his music, photography, editorial references, studio, and voice, plus a private owner console Justin can use to operate it himself.
 
 ---
 
-## Fixed information architecture
+## Fixed public information architecture
 
 Persistent mobile bottom navigation:
 
@@ -33,7 +39,9 @@ Persistent mobile bottom navigation:
 - **ESMER** = default/home, identity, editorial logs, cinematic scroll, live work, production, press, studio threshold, reserved VR/spatial studio section.
 - **BOOK** = structured inquiry and conversion flow.
 
-Do not add more primary tabs because there is more content. Put deeper content behind those three doors.
+Do not add more primary public tabs because there is more content. Put deeper content behind those three doors.
+
+Crawlable deeper routes should include `/music`, release detail states, `/press`, `/logs`, and `/book` even if the visual experience is presented through one cohesive shell.
 
 ---
 
@@ -69,7 +77,7 @@ Esmer gets his own visual system.
 
 ---
 
-## Approved design synthesis
+## Approved public design synthesis
 
 Use the exact approval matrix in `docs/DESIGN-DIRECTION-v1.md`.
 
@@ -91,6 +99,30 @@ Never silently reintroduce a rejected reference.
 
 ---
 
+## Authority / Press / search graph
+
+The project already has a verified source register and a machine-readable source graph. Use them rather than doing broad name searches:
+
+- `docs/PRESS-SOURCE-REGISTER.md`
+- `docs/AUTHORITY-LINK-GRAPH.md`
+- `data/press-sources.json`
+
+Build a real `/press` source hub and link relevant sources from release/log pages. Use original summaries; do not republish article bodies.
+
+### Existing backlink/domain equity
+
+External sources already link Justin Esmer / Esmer to `https://www.esmermusic.com/`.
+
+Before deployment, confirm Justin controls that domain.
+
+- If yes: strongly prefer preserving it as the canonical official domain.
+- If another canonical domain is intentionally selected: 301 redirect the existing official hostname to the replacement and preserve meaningful paths when practical.
+- Do not discard those existing inbound links by letting the recognized official domain die.
+
+The fact that external sources link the domain does not itself prove Justin currently controls it; verify before configuration.
+
+---
+
 ## Media workflow
 
 All known public media/reference URLs are centralized in `docs/MEDIA-MANIFEST.json`.
@@ -101,7 +133,7 @@ Use those URLs to understand:
 - release-art direction over time;
 - press/live photography;
 - Achilles Heel process/event imagery;
-- approved Mobbin reference frames.
+- approved public-design reference frames.
 
 Public press images are **reference-only until reuse rights are confirmed**. Do not ship them simply because the URLs are in the manifest.
 
@@ -117,18 +149,61 @@ No stock studio photos.
 
 ---
 
+## Private owner backend
+
+Justin must be able to operate the site himself. Read both:
+
+- `docs/ADMIN-BACKEND-DESIGN.md` — product architecture, modules, permissions, API boundary
+- `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md` — approved visual/interaction language researched from Mobbin
+
+The private admin can live under `/admin` in this repo, but it is a **tenant UI**, not a separate backend.
+
+Required modules:
+
+1. Overview
+2. Site
+3. Music
+4. Logs
+5. Media
+6. Bookings
+7. Contacts
+8. Analytics
+9. Press / SEO
+10. Network
+11. Settings
+
+Justin must be able to edit ordinary content, preview it, publish it, manage music/release metadata, upload and classify media, post Logs, manage booking inquiries and contacts, see analytics, and maintain approved Press/SEO entries without touching code.
+
+Identity-critical, legal, platform, PRIM3, canonical-routing, permission and Powered by McCluster fields remain protected/review-gated.
+
+### Backend law
+
+Use McCluster:
+
+- API `https://api.mccluster.org`
+- Worker `mccluster`
+- shared Supabase-backed auth/data
+
+Do not create an Esmer-specific Worker, service-role browser connection, separate CRM, separate auth database, separate analytics backend, or separate social/network persistence.
+
+If the tenant endpoints are not implemented yet, build the UI behind an API-client abstraction with local fixtures and document the missing control-plane endpoints. Do not solve a missing endpoint by creating a second platform.
+
+---
+
 ## Build what exists; reserve what does not
 
 ### Build now
 
-- mobile shell;
+- mobile public shell;
 - three-tab bottom bar;
 - Esmer home/editorial structure;
 - real catalog metadata and platform links from the dossier;
 - release-art slots wired to approved/authorized sources;
 - mini-player behavior / player shell;
 - Logs / Selected Work architecture;
+- Press/source architecture and internal links;
 - booking form UI and McCluster control-plane handoff boundary;
+- private admin shell and core owner-edit workflows;
 - Powered by McCluster attribution;
 - spatial/VR **section structure** and state contract;
 - crawlable semantic content;
@@ -183,11 +258,9 @@ Do not create a second social backend in this repo.
 
 ---
 
-## First implementation milestone
+## First implementation milestones
 
-The first useful Claude milestone is **not** "finish the whole site."
-
-It is:
+### Milestone A — public shell
 
 - working mobile shell;
 - polished `MUSIC | ESMER | BOOK` bar;
@@ -198,4 +271,16 @@ It is:
 - booking UI present;
 - no heavy 3D dependency yet.
 
-Then stop for a visual/interaction review before spending time on polish or speculative features.
+### Milestone B — owner console
+
+- `/admin` shell on phone and desktop;
+- authentication boundary wired to McCluster adapter;
+- Overview dashboard;
+- Site editor with draft/preview/publish states;
+- Music and Logs management;
+- Media library shell with rights states;
+- Bookings/inquiry list + detail workflow;
+- Analytics and Press/SEO shells using real contracts or clearly labeled fixtures;
+- no parallel persistence.
+
+Stop for visual/interaction review after each milestone before spending time on speculative polish.

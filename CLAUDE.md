@@ -6,7 +6,7 @@ You are the primary site builder for the **Esmer** client site.
 2. Read `docs/IDENTITY-LOCK.md` completely before using any public biography, music metadata, image, video, social profile, or external research. **No fuzzy identity matching is allowed.**
 3. Read `docs/DESIGN-DIRECTION-v1.md` completely before making any visual or UX decision. It is the approved public-site design source of truth.
 4. Read `docs/ESMER-DOSSIER.md` and `docs/MEDIA-MANIFEST.json` before implementing public content/media.
-5. Read `docs/AUTHORITY-LINK-GRAPH.md` before implementing SEO, Press, structured data, canonical URLs, internal links, release pages, or third-party source cards.
+5. Read `docs/PRESS-SOURCE-REGISTER.md` and `docs/AUTHORITY-LINK-GRAPH.md` before implementing SEO, Press, structured data, canonical URLs, internal links, release pages, or third-party source cards.
 6. Read `docs/ADMIN-BACKEND-DESIGN.md` before implementing `/admin` or any private client-facing management UI.
 7. Read `docs/VR-SCROLL-ARCHITECTURE.md` before implementing the studio/VR slot.
 8. Read the current `AGENTS.md`, `CLAUDE.md`, `docs/control-plane/ECOSYSTEM.md`, and `docs/control-plane/SATELLITE.md` in `mcclusterishere/mccluster` because this repository is a McCluster satellite/client property.

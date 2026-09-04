@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Book — Esmer</title>
+<meta name="description" content="Inquire about recording, production, session support, performance and collaboration with Justin Esmer.">
+<link rel="canonical" href="https://www.esmermusic.com/book/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Esmer">
+<meta property="og:title" content="Book — Esmer">
+<meta property="og:description" content="Inquire about recording, production, session support, performance and collaboration with Justin Esmer.">
+<meta property="og:url" content="https://www.esmermusic.com/book/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.esmermusic.com/#justin-esmer",
+  "name": "Justin Esmer",
+  "alternateName": "Esmer",
+  "url": "https://www.esmermusic.com/",
+  "jobTitle": [
+    "Singer-songwriter",
+    "Producer",
+    "Multi-instrumentalist"
+  ],
+  "sameAs": [
+    "https://music.apple.com/us/artist/esmer/1542619015"
+  ],
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Connecticut, United States"
+  }
+}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<main id="main">
+
+<section class="band band--tight">
+  <div class="wrap">
+    <p class="eyebrow">Book</p>
+    <h1 class="h-section">Start an inquiry</h1>
+    <p class="lede">Tell Esmer what you are making. He replies by email.</p>
+  </div>
+</section>
+
+<section class="band band--tight">
+  <div class="wrap">
+    <form class="form" data-book-form
+          data-endpoint="https://api.mccluster.org/v1/inquiries"
+          data-org="esmer"
+          
+          method="post" action="https://api.mccluster.org/v1/inquiries">
+
+      <fieldset class="fieldset">
+        <legend class="fieldset__legend">What do you need?</legend>
+        <div class="choices">
+          <label class="choice">
+            <input type="radio" name="want" value="Recording" checked>
+            <span>Recording</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" value="Production">
+            <span>Production</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" value="Engineering / session support">
+            <span>Engineering / session support</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" value="Instrumental performance">
+            <span>Instrumental performance</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" value="Live performance">
+            <span>Live performance</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" value="Collaboration / feature">
+            <span>Collaboration / feature</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" value="Something else">
+            <span>Something else</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="bk-name">Your name</label>
+        <input class="input" id="bk-name" name="name" type="text" autocomplete="name" required maxlength="200">
+      </div>
+
+      <div class="field">
+        <label for="bk-email">Email</label>
+        <input class="input" id="bk-email" name="email" type="email" autocomplete="email" required maxlength="320">
+      </div>
+
+      <div class="field">
+        <label for="bk-note">The project</label>
+        <textarea class="textarea" id="bk-note" name="note" rows="5" maxlength="4000"
+          placeholder="Dates, where, what you are working on."></textarea>
+      </div>
+
+      <!-- Honeypot. Hidden from people, irresistible to bots. -->
+      <div class="field" aria-hidden="true" style="position:absolute;left:-9999px">
+        <label for="bk-company">Company</label>
+        <input class="input" id="bk-company" name="company" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button class="btn" type="submit">Send inquiry</button>
+      <p class="form__status" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="meta" style="margin-top:3rem;max-width:46ch;line-height:1.9">
+      Rates are discussed per project. Nothing is charged through this form.
+    </p>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__links">
+      <a href="/music/">Music</a>
+      <a href="/logs/">Logs</a>
+      <a href="/press/">Press</a>
+      <a href="/book/">Book</a>
+      <a href="https://music.apple.com/us/artist/esmer/1542619015" target="_blank" rel="noopener">Apple Music</a>
+    </div>
+    <p class="foot__attr">
+      &copy; 2026 Justin Esmer.
+      <a href="https://matthew.mccluster.org/" target="_blank" rel="noopener">Powered by McCluster</a>
+    </p>
+  </div>
+</footer>
+<div class="listening" data-open="false" aria-live="polite">
+  <div class="listening__inner">
+    <div class="listening__art" aria-hidden="true"></div>
+    <div class="listening__text">
+      <div class="listening__title"></div>
+      <div class="listening__sub"></div>
+    </div>
+    <a class="listening__go" href="#" target="_blank" rel="noopener">Listen</a>
+    <button class="listening__close" type="button" aria-label="Dismiss">&times;</button>
+  </div>
+</div>
+<nav class="nav" aria-label="Primary">
+  <div class="nav__inner">
+    <a class="nav__item" href="/music/"><span class="nav__dot" aria-hidden="true"></span>Music</a>
+    <a class="nav__item" href="/"><span class="nav__dot" aria-hidden="true"></span>Esmer</a>
+    <a class="nav__item" href="/book/" aria-current="page"><span class="nav__dot" aria-hidden="true"></span>Book</a>
+  </div>
+</nav>
+<script src="/js/app.js" defer></script>
+<script src="/js/book.js" defer></script>
+</body>
+</html>

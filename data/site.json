@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "updated": "2026-09-04",
+  "_canonicalOriginNote": "TODO — CONFIRM BEFORE DEPLOYMENT. docs/AUTHORITY-LINK-GRAPH.md records that Cherry Tape Magazine and Space Ballroom already link Justin Esmer to https://www.esmermusic.com/. That is why it is the default here. It is NOT confirmed that Justin controls the domain. Confirm control first. If a different hostname is chosen, change this one value and 301 the old host — do not let the existing inbound links die.",
+  "canonicalOrigin": "https://www.esmermusic.com",
+  "canonicalOriginConfirmed": false,
+  "entityId": "#justin-esmer",
+  "publicName": "Justin Esmer",
+  "artistName": "Esmer",
+  "label": "JAJE",
+  "_sameAsNote": "sameAs is identity-equivalent OFFICIAL profiles only, never press articles (docs/AUTHORITY-LINK-GRAPH.md §5). Apple Music is the one profile anchored to the canonical artist ID in docs/IDENTITY-LOCK.md. Spotify, Instagram, YouTube, TikTok and Bandcamp are deliberately absent: no verified URL for them exists in this repository, and a guessed profile URL is an identity error, not a missing nice-to-have. Add each only once Esmer supplies it.",
+  "sameAs": [
+    "https://music.apple.com/us/artist/esmer/1542619015"
+  ],
+  "appleMusicArtistId": "1542619015",
+  "appleMusicArtistUrl": "https://music.apple.com/us/artist/esmer/1542619015",
+  "attribution": {
+    "label": "Powered by McCluster",
+    "href": "https://matthew.mccluster.org/"
+  },
+  "api": {
+    "origin": "https://api.mccluster.org",
+    "inquiries": "/v1/inquiries",
+    "org": "esmer"
+  },
+  "_bookServicesNote": "docs/DESIGN-DIRECTION-v1.md §7 lists these as categories to CONFIRM with Esmer, and CLAUDE.md forbids guessing services. They ship as inquiry categories only — no capability claim, no rate, no turnaround promise attached to any of them.",
+  "bookServices": [
+    {
+      "id": "recording",
+      "label": "Recording"
+    },
+    {
+      "id": "production",
+      "label": "Production"
+    },
+    {
+      "id": "engineering",
+      "label": "Engineering / session support"
+    },
+    {
+      "id": "instrumental",
+      "label": "Instrumental performance"
+    },
+    {
+      "id": "live",
+      "label": "Live performance"
+    },
+    {
+      "id": "collaboration",
+      "label": "Collaboration / feature"
+    },
+    {
+      "id": "other",
+      "label": "Something else"
+    }
+  ],
+  "_fallbackContactNote": "TODO — ASK ESMER. Shown only if the inquiry endpoint fails, so a visitor always has a route. docs/ESMER-DOSSIER.md §13 puts booking destination on the client-approval list, so this stays null until Esmer supplies a real address. Do not invent one: a plausible-looking address silently routes real bookings into nothing.",
+  "fallbackContact": null
+}

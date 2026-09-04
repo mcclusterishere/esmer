@@ -6,8 +6,8 @@ You are the primary site builder for the **Esmer** client site.
 2. Read `docs/IDENTITY-LOCK.md` completely before using any public biography, music metadata, image, video, social profile, or external research. **No fuzzy identity matching is allowed.**
 3. Read `docs/DESIGN-DIRECTION-v1.md` completely before making any visual or UX decision. It is the approved public-site design source of truth.
 4. Read `docs/ESMER-DOSSIER.md` and `docs/MEDIA-MANIFEST.json` before implementing public content/media.
-5. Read `docs/PRESS-SOURCE-REGISTER.md` and `docs/AUTHORITY-LINK-GRAPH.md` before implementing SEO, Press, structured data, canonical URLs, internal links, release pages, or third-party source cards.
-6. Read `docs/ADMIN-BACKEND-DESIGN.md` before implementing `/admin` or any private client-facing management UI.
+5. Read `docs/PRESS-SOURCE-REGISTER.md`, `docs/AUTHORITY-LINK-GRAPH.md`, and `data/press-sources.json` before implementing SEO, Press, structured data, canonical URLs, internal links, release pages, or third-party source cards.
+6. Read `docs/ADMIN-BACKEND-DESIGN.md` **and** `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md` before implementing `/admin` or any private client-facing management UI.
 7. Read `docs/VR-SCROLL-ARCHITECTURE.md` before implementing the studio/VR slot.
 8. Read the current `AGENTS.md`, `CLAUDE.md`, `docs/control-plane/ECOSYSTEM.md`, and `docs/control-plane/SATELLITE.md` in `mcclusterishere/mccluster` because this repository is a McCluster satellite/client property.
 9. Do **not** create a second backend, auth system, database, billing system, CRM, social scheduler, admin data store, or Cloudflare Worker. The Esmer private admin **UI can live in this repo**, but authenticated state/persistence belongs to the McCluster control plane.
@@ -49,16 +49,24 @@ Do not invent new reference-driven styling without Matthew McCluster's approval.
 
 This site should become the strongest canonical first-party web entity for searches around Justin Esmer / Esmer.
 
-Implement the verified source graph and SEO rules in `docs/AUTHORITY-LINK-GRAPH.md`:
+Implement the verified source graph and SEO rules in `docs/AUTHORITY-LINK-GRAPH.md` and use `data/press-sources.json` as the machine-readable source inventory:
 
-- crawlable Home, Music, Press and Book states
+- crawlable Home, Music, Press, Logs and Book states
 - release-specific crawlable detail states where practical
 - one stable Justin Esmer entity ID
 - `alternateName: Esmer`
 - verified official profiles in `sameAs`
 - press/features represented as citations / `subjectOf`, **not** `sameAs`
-- strong internal linking among entity, releases, press and booking
+- strong internal linking among entity, releases, press, logs and booking
 - canonical tags, sitemap, robots, OG metadata and authorized imagery
+
+### Existing-domain / backlink rule
+
+Existing external pages already link Justin Esmer / Esmer to `https://www.esmermusic.com/`. Before choosing a different canonical hostname, confirm whether Justin controls that domain.
+
+- If he controls it, preserve it as the canonical deployment unless Matthew and Justin deliberately choose otherwise.
+- If a different canonical domain is required, preserve the existing authority with permanent 301 redirects.
+- Do not discard known inbound-link equity by silently abandoning `esmermusic.com`.
 
 Do not republish full third-party articles. Use original summaries and links.
 
@@ -66,7 +74,7 @@ Do not republish full third-party articles. Use original summaries and links.
 
 Justin needs a real tenant-facing backend, not a static site that only McCluster can change.
 
-Build the **UI/experience** described in `docs/ADMIN-BACKEND-DESIGN.md`. The required product includes:
+Build the **UI/experience** described in `docs/ADMIN-BACKEND-DESIGN.md`, using the approved functional/visual reference synthesis in `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md`. The required product includes:
 
 - Overview dashboard
 - Site editor with preview and publish states
@@ -81,6 +89,8 @@ Build the **UI/experience** described in `docs/ADMIN-BACKEND-DESIGN.md`. The req
 - Settings
 
 The admin must work on phone as well as desktop.
+
+The admin is **not** a public-site reskin. It should feel lightly Esmer-branded but operate like a disciplined professional console. The Mobbin board controls the interaction-language references; do not invent a generic dashboard aesthetic after those references have already been approved.
 
 ### Backend boundary
 

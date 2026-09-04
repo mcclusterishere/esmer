@@ -136,6 +136,9 @@ because `docs/AUTHORITY-LINK-GRAPH.md` needs `/`, `/music`, `/music/<slug>`,
 - no horizontal overflow at 320 / 390 / 430 px
 - `prefers-reduced-motion` honoured; no 3D in the critical path
 - booking form fails honestly — it never reports success it did not get
+- Book leads with lessons — guitar, voice, production and songwriting, in person
+  in Connecticut or online. Subject and format fields appear only for a lessons
+  inquiry, via `:has()` rather than JavaScript
 
 ### Deliberately absent
 
@@ -148,7 +151,7 @@ Gaps left open on purpose; filling them by guessing breaks this repo's rules.
 | Typeface | None approved; unlicensed fonts forbidden. System stack, swappable via one CSS token | Approval |
 | Colour accent | Palette is achromatic so Esmer's own artwork supplies the colour | Artwork |
 | Rates | `CLAUDE.md` §16 — do not guess | Esmer |
-| What Esmer teaches | Teaching is confirmed (Matthew, 2026-09-04) and Book leads with it. What he teaches, in person or online, and any level range are not confirmed — and must not be inferred from the instruments he plays in the dossier | Esmer |
+| Lesson rates, length, age/level range | Teaching, its four subjects and both formats are confirmed (Matthew, 2026-09-04). Rates, lesson length and any age or level range are not. In-person is described as Connecticut only — the studio locality stays private | Esmer |
 | Fallback contact address | Booking destination is on the approval list; shown only if the API fails | Esmer |
 | Studio room, gear, address | Not captured; never invented | On-site capture |
 | Spatial / VR studio | Slot carved into the architecture, loads no 3D | Capture |

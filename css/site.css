@@ -338,17 +338,27 @@ p { margin: 0 0 1.1em; max-width: 42ch; }
 .btn--ghost { background: transparent; color: var(--bone); border-color: var(--rule); font-weight: 500; }
 .btn--ghost:hover { border-color: var(--bone); opacity: 1; }
 
-/* Lesson detail is only relevant once Lessons is the chosen category.
+/* THE CONVERSATION TREE
 
-   Done with :has() rather than JavaScript so the form needs no script to
-   behave correctly. The fallback direction matters: where :has() is
-   unsupported the block simply stays visible, which is merely redundant.
-   Defaulting it hidden instead would hide real questions from those
-   browsers with nothing to reveal them. */
-.lesson-detail { display: block; }
+   Each service category carries its own follow-up questions, and only the
+   chosen branch is on screen. Done with :has() rather than JavaScript so the
+   form branches correctly with no script at all.
+
+   The fallback direction is the whole point: where :has() is unsupported
+   every branch stays visible, which is merely long. Defaulting them hidden
+   would hide real questions from those browsers with nothing to reveal them,
+   and the visitor would silently under-answer. Long beats invisible.
+
+   The rule is generated per branch by scripts/build.mjs so adding a category
+   to data/site.json needs no CSS. */
+.branch { display: block; }
 @supports selector(:has(*)) {
-  .lesson-detail { display: none; }
-  .form:has(#want-lessons:checked) .lesson-detail { display: block; }
+  .branch { display: none; }
+}
+
+.sent__account {
+  margin-top: 2.5rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule);
 }
 
 /* Action row. Buttons are inline-level, so a bare <p> lets them wrap into

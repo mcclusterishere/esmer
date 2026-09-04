@@ -35,6 +35,11 @@ Booking is **inquiry-first**. A booking request is a lead, not a charge —
 Esmer's rates are not settled, and `CLAUDE.md` forbids guessing them. The form
 posts an inquiry; Esmer reviews it; payment is arranged afterwards.
 
+The form is a **conversation tree**: each service category carries its own
+follow-up questions, and only the chosen branch is on screen. Branch answers
+are transcribed into `note` above the visitor's message — `want` stays the
+category — so the API stays generic and one client's form does not bend it.
+
 ```js
 await fetch('https://api.mccluster.org/v1/inquiries', {
   method: 'POST',
@@ -48,7 +53,12 @@ await fetch('https://api.mccluster.org/v1/inquiries', {
     source: 'esmer-book'
   })
 });
-// 201 -> { received: true, at: "…" }
+// 201 -> { received: true, at: "…", notified: true }
+//
+// `notified` says whether the plane actually reached a person. It is false
+// when the client has no owner account and no notify_email configured — the
+// inquiry is still recorded and still lands in the inbox. Never show the
+// visitor anything different based on it; it is for our diagnostics.
 ```
 
 No API key. No auth. Nothing sensitive comes back — a `201` means it landed in
@@ -56,6 +66,27 @@ the CRM, and that is all the form needs to know.
 
 Handle a non-2xx by telling the visitor the message did not send and offering
 the fallback contact. Never claim an inquiry was received when it was not.
+
+## Accounts
+
+After a confirmed send, the Book page offers an account so the visitor can
+keep the thread. It is **passwordless** — this repo never handles a password.
+
+```js
+await fetch('https://api.mccluster.org/v1/account/start', {
+  method: 'POST',
+  headers: { 'content-type': 'application/json' },
+  body: JSON.stringify({ org: 'esmer', email })   // the address they just used
+});
+// 200 -> { sent: true }   Supabase emails the sign-in link.
+```
+
+The response is identical whether or not that address already has an account.
+Do not surface any difference: it would turn the endpoint into a way to check
+whether a given person is a McCluster client's customer.
+
+Only offer this after the inquiry itself succeeded. An account offer stacked
+on a message that did not send is a lie about the first half.
 
 ## Do not invent endpoints
 

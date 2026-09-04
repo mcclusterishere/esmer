@@ -136,9 +136,12 @@ because `docs/AUTHORITY-LINK-GRAPH.md` needs `/`, `/music`, `/music/<slug>`,
 - no horizontal overflow at 320 / 390 / 430 px
 - `prefers-reduced-motion` honoured; no 3D in the critical path
 - booking form fails honestly — it never reports success it did not get
-- Book leads with lessons — guitar, voice, production and songwriting, in person
-  in Connecticut or online. Subject and format fields appear only for a lessons
-  inquiry, via `:has()` rather than JavaScript
+- Book is a conversation tree — every service category carries its own follow-up
+  questions and only the chosen branch is on screen, via `:has()` rather than
+  JavaScript. Answers are transcribed into the lead so an inquiry arrives
+  answerable instead of needing three emails to become one
+- after a confirmed send, a passwordless account offer so the visitor keeps the
+  thread — never offered when the send failed
 
 ### Deliberately absent
 

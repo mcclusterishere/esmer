@@ -566,8 +566,14 @@ function bookPage() {
     <form class="form" data-book-form
           data-endpoint="${esc(site.api.origin + site.api.inquiries)}"
           data-org="${esc(site.api.org)}"
+          data-timing-label="${esc(site.bookTiming.label)}"
+          data-account-endpoint="${esc(site.api.origin + site.api.accountStart)}"
           ${site.fallbackContact ? `data-fallback="${esc(site.fallbackContact)}"` : ''}
           method="post" action="${esc(site.api.origin + site.api.inquiries)}">
+
+      <style>${site.bookServices.filter((sv) => sv.questions && sv.questions.length)
+        .map((sv) => `@supports selector(:has(*)){.form:has(#want-${sv.id}:checked) [data-branch="${sv.id}"]{display:block}}`)
+        .join('')}</style>
 
       <fieldset class="fieldset">
         <legend class="fieldset__legend">What do you need?</legend>
@@ -579,27 +585,30 @@ function bookPage() {
         </div>
       </fieldset>
 
-      <div class="lesson-detail">
-        <fieldset class="fieldset">
-          <legend class="fieldset__legend">What would you like to work on?</legend>
+      ${site.bookServices.filter((sv) => sv.questions && sv.questions.length).map((sv) => `
+      <div class="branch" data-branch="${esc(sv.id)}">
+        ${sv.questions.map((qn) => `<fieldset class="fieldset">
+          <legend class="fieldset__legend">${esc(qn.label)}</legend>
           <div class="choices">
-            ${site.lessonSubjects.map((s) => `<label class="choice">
-              <input type="checkbox" name="subject" value="${esc(s.label)}">
-              <span>${esc(s.label)}</span>
+            ${qn.options.map((op) => `<label class="choice">
+              <input type="${qn.type === 'multi' ? 'checkbox' : 'radio'}"
+                     name="${esc(sv.id)}.${esc(qn.id)}"
+                     value="${esc(op.label)}"${qn.type === 'one' && qn.default === op.id ? ' checked' : ''}>
+              <span>${esc(op.label)}</span>
             </label>`).join('\n            ')}
           </div>
-        </fieldset>
+        </fieldset>`).join('\n        ')}
+      </div>`).join('\n      ')}
 
-        <fieldset class="fieldset">
-          <legend class="fieldset__legend">In person or online?</legend>
-          <div class="choices">
-            ${site.lessonFormats.map((s, i) => `<label class="choice">
-              <input type="radio" name="format" value="${esc(s.label)}"${i === site.lessonFormats.length - 1 ? ' checked' : ''}>
-              <span>${esc(s.label)}</span>
-            </label>`).join('\n            ')}
-          </div>
-        </fieldset>
-      </div>
+      <fieldset class="fieldset">
+        <legend class="fieldset__legend">${esc(site.bookTiming.label)}</legend>
+        <div class="choices">
+          ${site.bookTiming.options.map((op) => `<label class="choice">
+            <input type="radio" name="timing" value="${esc(op.label)}"${site.bookTiming.default === op.id ? ' checked' : ''}>
+            <span>${esc(op.label)}</span>
+          </label>`).join('\n          ')}
+        </div>
+      </fieldset>
 
       <div class="field">
         <label for="bk-name">Your name</label>
@@ -626,6 +635,26 @@ function bookPage() {
       <button class="btn" type="submit">Send inquiry</button>
       <p class="form__status" role="status" aria-live="polite"></p>
     </form>
+
+    <!-- Shown in place of the form once the control plane has confirmed the
+         inquiry. Never shown on a failure: an account offer on top of a
+         message that did not send would be a lie about the first half. -->
+    <div class="sent" data-sent hidden>
+      <p class="eyebrow">Sent</p>
+      <h2 class="h-section">Your message is with Esmer.</h2>
+      <p class="lede">He replies by email.</p>
+
+      <div class="sent__account">
+        <h3 class="h-sub">Keep the conversation</h3>
+        <p>Make an account and this thread stays in one place — his reply, your
+        details, and anything you send next. No password: we email you a link.</p>
+        <div class="actions">
+          <button class="btn" type="button" data-account-start>Email me a sign-in link</button>
+          <a class="btn btn--ghost" href="/">Not now</a>
+        </div>
+        <p class="form__status" role="status" aria-live="polite" data-account-status></p>
+      </div>
+    </div>
 
     <p class="meta" style="margin-top:3rem;max-width:46ch;line-height:1.9">
       Rates are agreed directly with Esmer. Nothing is charged through this form.

@@ -21,80 +21,462 @@
   "api": {
     "origin": "https://api.mccluster.org",
     "inquiries": "/v1/inquiries",
-    "org": "esmer"
+    "org": "esmer",
+    "accountStart": "/v1/account/start"
   },
-  "_bookServicesNote": "docs/DESIGN-DIRECTION-v1.md §7 lists these as categories to CONFIRM with Esmer, and CLAUDE.md forbids guessing services. They ship as inquiry categories only — no capability claim, no rate, no turnaround promise attached to any of them. TEACHING: confirmed directly by Matthew McCluster on 2026-09-04 — Esmer is a music teacher and Book is not artist-booking only. That is an authorised source under docs/IDENTITY-LOCK.md verification rule 3, so lessons lead this list. What he teaches (instruments, voice, production, songwriting), whether lessons are in person, online or both, and any age or level range are all still unconfirmed and must not be inferred from the instruments he plays in docs/ESMER-DOSSIER.md §2.",
+  "_bookServicesNote": "The Book conversation tree. Every category carries its own follow-up questions so an inquiry arrives answerable instead of needing three emails to become one. PROVENANCE: teaching, its four subjects and both formats were confirmed by Matthew McCluster on 2026-09-04 — authorised under docs/IDENTITY-LOCK.md verification rule 3. Everything else here asks what the VISITOR needs; none of it asserts a capability, a rate, a turnaround or an availability on Esmer's behalf, because CLAUDE.md §16 forbids guessing services. Options are editable here without touching code.",
   "bookServices": [
     {
       "id": "lessons",
-      "label": "Lessons / teaching"
+      "label": "Lessons / teaching",
+      "questions": [
+        {
+          "id": "subject",
+          "label": "What would you like to work on?",
+          "type": "multi",
+          "options": [
+            {
+              "id": "guitar",
+              "label": "Guitar"
+            },
+            {
+              "id": "voice",
+              "label": "Voice"
+            },
+            {
+              "id": "production",
+              "label": "Production / recording"
+            },
+            {
+              "id": "songwriting",
+              "label": "Songwriting"
+            },
+            {
+              "id": "unsure",
+              "label": "Not sure yet"
+            }
+          ],
+          "_note": "Confirmed subjects. Do not add one Esmer has not confirmed."
+        },
+        {
+          "id": "format",
+          "label": "In person or online?",
+          "type": "one",
+          "options": [
+            {
+              "id": "in-person",
+              "label": "In person"
+            },
+            {
+              "id": "online",
+              "label": "Online"
+            },
+            {
+              "id": "either",
+              "label": "Either"
+            }
+          ],
+          "default": "either"
+        },
+        {
+          "id": "level",
+          "label": "Where are you starting from?",
+          "type": "one",
+          "options": [
+            {
+              "id": "new",
+              "label": "Completely new"
+            },
+            {
+              "id": "some",
+              "label": "Some experience"
+            },
+            {
+              "id": "playing",
+              "label": "Already playing"
+            },
+            {
+              "id": "rather-not",
+              "label": "Rather not say"
+            }
+          ],
+          "default": "rather-not",
+          "_note": "Asks the STUDENT's level. It does not claim Esmer teaches any particular level range — that is unconfirmed."
+        },
+        {
+          "id": "cadence",
+          "label": "How often?",
+          "type": "one",
+          "options": [
+            {
+              "id": "weekly",
+              "label": "Weekly"
+            },
+            {
+              "id": "fortnightly",
+              "label": "Every couple of weeks"
+            },
+            {
+              "id": "one-off",
+              "label": "A one-off"
+            },
+            {
+              "id": "unsure-cadence",
+              "label": "Not sure yet"
+            }
+          ],
+          "default": "unsure-cadence"
+        }
+      ]
     },
     {
       "id": "recording",
-      "label": "Recording"
+      "label": "Recording",
+      "questions": [
+        {
+          "id": "scope",
+          "label": "What are you recording?",
+          "type": "one",
+          "options": [
+            {
+              "id": "single",
+              "label": "A single"
+            },
+            {
+              "id": "ep",
+              "label": "An EP"
+            },
+            {
+              "id": "album",
+              "label": "An album"
+            },
+            {
+              "id": "demo",
+              "label": "A demo"
+            },
+            {
+              "id": "unsure-scope",
+              "label": "Not sure yet"
+            }
+          ],
+          "default": "unsure-scope"
+        },
+        {
+          "id": "stage",
+          "label": "Where is it up to?",
+          "type": "one",
+          "options": [
+            {
+              "id": "idea",
+              "label": "Still an idea"
+            },
+            {
+              "id": "written",
+              "label": "Written, not recorded"
+            },
+            {
+              "id": "part",
+              "label": "Partly recorded"
+            },
+            {
+              "id": "done",
+              "label": "Recorded, needs finishing"
+            }
+          ],
+          "default": "written"
+        }
+      ]
     },
     {
       "id": "production",
-      "label": "Production"
+      "label": "Production",
+      "questions": [
+        {
+          "id": "start",
+          "label": "What are you starting with?",
+          "type": "one",
+          "options": [
+            {
+              "id": "scratch",
+              "label": "Nothing yet — from scratch"
+            },
+            {
+              "id": "demos",
+              "label": "Demos"
+            },
+            {
+              "id": "stems",
+              "label": "Stems that need finishing"
+            },
+            {
+              "id": "unsure-start",
+              "label": "Not sure yet"
+            }
+          ],
+          "default": "unsure-start"
+        },
+        {
+          "id": "scope",
+          "label": "How much of it?",
+          "type": "one",
+          "options": [
+            {
+              "id": "one",
+              "label": "One song"
+            },
+            {
+              "id": "few",
+              "label": "A few songs"
+            },
+            {
+              "id": "project",
+              "label": "A whole project"
+            }
+          ],
+          "default": "one"
+        }
+      ]
     },
     {
       "id": "engineering",
-      "label": "Engineering / session support"
+      "label": "Engineering / session support",
+      "questions": [
+        {
+          "id": "kind",
+          "label": "What kind of session?",
+          "type": "one",
+          "options": [
+            {
+              "id": "tracking",
+              "label": "Tracking"
+            },
+            {
+              "id": "mixing",
+              "label": "Mixing"
+            },
+            {
+              "id": "live",
+              "label": "A live session"
+            },
+            {
+              "id": "unsure-kind",
+              "label": "Not sure yet"
+            }
+          ],
+          "default": "unsure-kind"
+        },
+        {
+          "id": "where",
+          "label": "Where?",
+          "type": "one",
+          "options": [
+            {
+              "id": "esmer",
+              "label": "Esmer's studio"
+            },
+            {
+              "id": "mine",
+              "label": "My space"
+            },
+            {
+              "id": "remote",
+              "label": "Remotely"
+            },
+            {
+              "id": "unsure-where",
+              "label": "Not sure yet"
+            }
+          ],
+          "default": "unsure-where",
+          "_note": "'Esmer's studio' names no address. The locality is private per docs/ESMER-DOSSIER.md §1."
+        }
+      ]
     },
     {
       "id": "instrumental",
-      "label": "Instrumental performance"
+      "label": "Instrumental performance",
+      "questions": [
+        {
+          "id": "need",
+          "label": "What do you need played?",
+          "type": "multi",
+          "options": [
+            {
+              "id": "guitar",
+              "label": "Guitar"
+            },
+            {
+              "id": "bass",
+              "label": "Bass"
+            },
+            {
+              "id": "keys",
+              "label": "Keys"
+            },
+            {
+              "id": "drums",
+              "label": "Drums"
+            },
+            {
+              "id": "vocals",
+              "label": "Vocals"
+            },
+            {
+              "id": "other-inst",
+              "label": "Something else"
+            }
+          ],
+          "_note": "Asks what the VISITOR needs. It is not a list of instruments Esmer offers — he answers that himself."
+        },
+        {
+          "id": "forwhat",
+          "label": "For what?",
+          "type": "one",
+          "options": [
+            {
+              "id": "recording",
+              "label": "A recording"
+            },
+            {
+              "id": "live-date",
+              "label": "A live date"
+            },
+            {
+              "id": "both",
+              "label": "Both"
+            }
+          ],
+          "default": "recording"
+        }
+      ]
     },
     {
       "id": "live",
-      "label": "Live performance"
+      "label": "Live performance",
+      "questions": [
+        {
+          "id": "shape",
+          "label": "What are you booking?",
+          "type": "one",
+          "options": [
+            {
+              "id": "solo",
+              "label": "Solo"
+            },
+            {
+              "id": "band",
+              "label": "Full band"
+            },
+            {
+              "id": "unsure-shape",
+              "label": "Not sure yet"
+            }
+          ],
+          "default": "unsure-shape"
+        },
+        {
+          "id": "occasion",
+          "label": "What is the occasion?",
+          "type": "one",
+          "options": [
+            {
+              "id": "venue",
+              "label": "A venue show"
+            },
+            {
+              "id": "private",
+              "label": "A private event"
+            },
+            {
+              "id": "festival",
+              "label": "A festival or bill"
+            },
+            {
+              "id": "other-occasion",
+              "label": "Something else"
+            }
+          ],
+          "default": "venue"
+        }
+      ]
     },
     {
       "id": "collaboration",
-      "label": "Collaboration / feature"
+      "label": "Collaboration / feature",
+      "questions": [
+        {
+          "id": "kind",
+          "label": "What kind?",
+          "type": "one",
+          "options": [
+            {
+              "id": "feature",
+              "label": "A feature"
+            },
+            {
+              "id": "cowrite",
+              "label": "A co-write"
+            },
+            {
+              "id": "production-swap",
+              "label": "Production"
+            },
+            {
+              "id": "unsure-collab",
+              "label": "Not sure yet"
+            }
+          ],
+          "default": "unsure-collab"
+        },
+        {
+          "id": "stage",
+          "label": "Is there something to hear yet?",
+          "type": "one",
+          "options": [
+            {
+              "id": "yes-link",
+              "label": "Yes — link is in my message"
+            },
+            {
+              "id": "not-yet",
+              "label": "Not yet"
+            }
+          ],
+          "default": "not-yet"
+        }
+      ]
     },
     {
       "id": "other",
-      "label": "Something else"
+      "label": "Something else",
+      "questions": []
     }
   ],
   "_fallbackContactNote": "TODO — ASK ESMER. Shown only if the inquiry endpoint fails, so a visitor always has a route. docs/ESMER-DOSSIER.md §13 puts booking destination on the client-approval list, so this stays null until Esmer supplies a real address. Do not invent one: a plausible-looking address silently routes real bookings into nothing.",
   "fallbackContact": null,
-  "_lessonsNote": "Confirmed by Matthew McCluster on 2026-09-04 — authorised source under docs/IDENTITY-LOCK.md verification rule 3. Esmer teaches guitar, voice, production/recording and songwriting, in person and online. Still NOT confirmed and still not to be invented: rates, lesson length, age or level range, and where in-person lessons happen. The studio locality stays private per docs/ESMER-DOSSIER.md §1, so in-person is described as Connecticut and never as an address.",
-  "lessonSubjects": [
-    {
-      "id": "guitar",
-      "label": "Guitar"
-    },
-    {
-      "id": "voice",
-      "label": "Voice"
-    },
-    {
-      "id": "production",
-      "label": "Production / recording"
-    },
-    {
-      "id": "songwriting",
-      "label": "Songwriting"
-    },
-    {
-      "id": "unsure",
-      "label": "Not sure yet"
-    }
-  ],
-  "lessonFormats": [
-    {
-      "id": "in-person",
-      "label": "In person"
-    },
-    {
-      "id": "online",
-      "label": "Online"
-    },
-    {
-      "id": "either",
-      "label": "Either"
-    }
-  ]
+  "_bookTimingNote": "Asked on every inquiry. Deliberately vague buckets — Esmer's availability is unconfirmed and this must not read as a promise.",
+  "bookTiming": {
+    "id": "timing",
+    "label": "When are you hoping to start?",
+    "type": "one",
+    "options": [
+      {
+        "id": "asap",
+        "label": "As soon as possible"
+      },
+      {
+        "id": "weeks",
+        "label": "Next few weeks"
+      },
+      {
+        "id": "months",
+        "label": "In a few months"
+      },
+      {
+        "id": "flexible",
+        "label": "Flexible"
+      }
+    ],
+    "default": "flexible"
+  }
 }

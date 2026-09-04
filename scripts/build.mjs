@@ -259,7 +259,7 @@ function home() {
     <div class="reveal">
       <p class="lede">Guitar-led songwriting, close harmony and a low, unhurried vocal. Recorded and released independently on ${esc(site.label)} since 2022.</p>
       <p>Public coverage places his roots in Hamden and New Haven. He plays regularly across Connecticut, and the records have moved steadily from something made alone toward something made with other people in the room.</p>
-      <p>He also teaches. The same ear that shapes the records is available to people learning to make their own.</p>
+      <p>He also teaches — guitar, voice, production and songwriting, in person in Connecticut or online. The same ear that shapes the records is available to people learning to make their own.</p>
       <p><a class="release__link" href="/press/">Read the press</a></p>
     </div>
   </div>
@@ -329,7 +329,7 @@ function home() {
   <div class="wrap">
     <p class="eyebrow">Work together</p>
     <h2 class="h-section">Lessons &amp; sessions</h2>
-    <p class="lede">Esmer teaches, and he records. Lessons, production, session support, performance and collaboration.</p>
+    <p class="lede">Guitar, voice, production and songwriting lessons — in person or online. Plus recording, session support, performance and collaboration.</p>
     <div class="actions"><a class="btn" href="/book/">Start an inquiry</a></div>
   </div>
 </section>`;
@@ -557,6 +557,7 @@ function bookPage() {
     <p class="eyebrow">Book</p>
     <h1 class="h-section">Start an inquiry</h1>
     <p class="lede">Whether you want to learn or you want to record — tell Esmer what you need. He replies by email.</p>
+    <p>He teaches guitar, voice, production and songwriting, in person in Connecticut or online.</p>
   </div>
 </section>
 
@@ -572,11 +573,33 @@ function bookPage() {
         <legend class="fieldset__legend">What do you need?</legend>
         <div class="choices">
           ${site.bookServices.map((s, i) => `<label class="choice">
-            <input type="radio" name="want" value="${esc(s.label)}"${i === 0 ? ' checked' : ''}>
+            <input type="radio" name="want" id="want-${esc(s.id)}" value="${esc(s.label)}"${i === 0 ? ' checked' : ''}>
             <span>${esc(s.label)}</span>
           </label>`).join('\n          ')}
         </div>
       </fieldset>
+
+      <div class="lesson-detail">
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">What would you like to work on?</legend>
+          <div class="choices">
+            ${site.lessonSubjects.map((s) => `<label class="choice">
+              <input type="checkbox" name="subject" value="${esc(s.label)}">
+              <span>${esc(s.label)}</span>
+            </label>`).join('\n            ')}
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">In person or online?</legend>
+          <div class="choices">
+            ${site.lessonFormats.map((s, i) => `<label class="choice">
+              <input type="radio" name="format" value="${esc(s.label)}"${i === site.lessonFormats.length - 1 ? ' checked' : ''}>
+              <span>${esc(s.label)}</span>
+            </label>`).join('\n            ')}
+          </div>
+        </fieldset>
+      </div>
 
       <div class="field">
         <label for="bk-name">Your name</label>
@@ -613,7 +636,7 @@ function bookPage() {
   return page({
     path: '/book/',
     title: `Book — ${site.artistName}`,
-    description: `Music lessons with ${site.publicName}, plus recording, production, session support, performance and collaboration.`,
+    description: `Guitar, voice, production and songwriting lessons with ${site.publicName}, in person in Connecticut or online — plus recording, session support, performance and collaboration.`,
     active: 'book',
     body,
     schema: [personSchema],

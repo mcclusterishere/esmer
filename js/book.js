@@ -37,6 +37,21 @@
     var name = String(data.get('name') || '').trim();
     var email = String(data.get('email') || '').trim();
 
+    /* The control plane takes one `want` string (200 chars). For a lessons
+       inquiry the useful answer is the subject and the format, so they are
+       folded into it rather than bending the API for one client. Truncated
+       to the column's limit here so the server never has to reject it. */
+    var want = function () {
+      var category = String(data.get('want') || '');
+      if (category.toLowerCase().indexOf('lesson') === -1) return category;
+      var subjects = data.getAll('subject').map(String).filter(Boolean);
+      var format = String(data.get('format') || '');
+      var parts = [category];
+      if (subjects.length) parts.push('— ' + subjects.join(', '));
+      if (format) parts.push('(' + format + ')');
+      return parts.join(' ').slice(0, 200);
+    };
+
     if (!name || !email) {
       say('A name and an email address are needed to reply to you.', 'error');
       return;
@@ -74,7 +89,7 @@
         org: org,
         name: name,
         email: email,
-        want: String(data.get('want') || ''),
+        want: want(),
         note: String(data.get('note') || ''),
         page: window.location.pathname,
         source: 'esmer-book'

@@ -59,5 +59,42 @@
     }
   ],
   "_fallbackContactNote": "TODO — ASK ESMER. Shown only if the inquiry endpoint fails, so a visitor always has a route. docs/ESMER-DOSSIER.md §13 puts booking destination on the client-approval list, so this stays null until Esmer supplies a real address. Do not invent one: a plausible-looking address silently routes real bookings into nothing.",
-  "fallbackContact": null
+  "fallbackContact": null,
+  "_lessonsNote": "Confirmed by Matthew McCluster on 2026-09-04 — authorised source under docs/IDENTITY-LOCK.md verification rule 3. Esmer teaches guitar, voice, production/recording and songwriting, in person and online. Still NOT confirmed and still not to be invented: rates, lesson length, age or level range, and where in-person lessons happen. The studio locality stays private per docs/ESMER-DOSSIER.md §1, so in-person is described as Connecticut and never as an address.",
+  "lessonSubjects": [
+    {
+      "id": "guitar",
+      "label": "Guitar"
+    },
+    {
+      "id": "voice",
+      "label": "Voice"
+    },
+    {
+      "id": "production",
+      "label": "Production / recording"
+    },
+    {
+      "id": "songwriting",
+      "label": "Songwriting"
+    },
+    {
+      "id": "unsure",
+      "label": "Not sure yet"
+    }
+  ],
+  "lessonFormats": [
+    {
+      "id": "in-person",
+      "label": "In person"
+    },
+    {
+      "id": "online",
+      "label": "Online"
+    },
+    {
+      "id": "either",
+      "label": "Either"
+    }
+  ]
 }

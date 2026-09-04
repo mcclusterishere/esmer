@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "updated": "2026-09-04",
+  "observedDomain": "https://www.esmermusic.com/",
+  "ownership": "unknown",
+  "clientConfirmation": "pending",
+  "deploymentBlocker": false,
+  "instructions": {
+    "continueBuild": true,
+    "doNotAssumeControl": true,
+    "ifClientControlsDomain": "Prefer preserving esmermusic.com as the canonical public domain because reputable existing sources already link to it.",
+    "ifClientDoesNotControlDomain": "Proceed with the full site and admin build using an environment/configurable canonical-domain value. Select the final domain later, then update canonicals, sitemap, structured data, OAuth redirect URIs, public links, and backlink outreach targets in one controlled change.",
+    "ifDomainCanBeAcquiredOrTransferred": "Evaluate recovery/acquisition separately. Do not block implementation while that question is unresolved.",
+    "redirectRule": "If control of esmermusic.com is obtained and a different canonical domain is selected, use permanent 301 redirects from the old inbound-link targets where technically possible."
+  },
+  "knownInboundLinks": [
+    {
+      "source": "Cherry Tape Magazine",
+      "url": "https://cherrytapemag.com/welcome-to-ct-see-the-scene/",
+      "target": "https://www.esmermusic.com/"
+    },
+    {
+      "source": "Space Ballroom",
+      "url": "https://spaceballroom.com/e/similar-kind-1296867468509/",
+      "target": "https://www.esmermusic.com/"
+    }
+  ]
+}

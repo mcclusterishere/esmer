@@ -88,6 +88,37 @@ whether a given person is a McCluster client's customer.
 Only offer this after the inquiry itself succeeded. An account offer stacked
 on a message that did not send is a lie about the first half.
 
+## Signing in — it is a McCluster account, not an Esmer one
+
+`js/mcc-auth.js` is a **vendored copy** of the canonical module in
+`mcclusterishere/mccluster`. Do not edit it here: fix it there and copy it
+back, or the satellites drift from the house. It is copied rather than
+fetched so Esmer's login is not on another origin's uptime or critical path.
+
+It authenticates against the same Supabase project every McCluster property
+uses, so a visitor who has signed in on any McCluster site is the same auth
+user here — one account, not a second one. A session is per-origin, so they
+tap sign-in once here; that is a browser rule, not a gap.
+
+```js
+window.MCC.signInWithGoogle('/auth/?next=/book/');  // PKCE, S256
+window.MCC.user();                                  // the signed-in user, or null
+window.MCC.api('/v1/me');                           // authenticated call to the plane
+```
+
+`/auth/` is the callback. It spends the authorization code and returns the
+visitor to a **same-origin** path only — an absolute `next` is rejected,
+because otherwise sign-in becomes an open redirect that arrives carrying a
+fresh session. Keep that guard.
+
+The Google button checks `/auth/v1/settings` and stays hidden unless the
+provider is enabled on the project. It is currently off, so the email
+sign-in link is the live path. Enabling it is a McCluster dashboard step —
+`docs/control-plane/SSO.md` upstream — and needs no change here.
+
+Esmer's `/auth/**` URLs must be on the project's redirect allowlist. That is
+also upstream, and login fails without it.
+
 ## Do not invent endpoints
 
 If the site needs something the API does not serve, the answer is a change in

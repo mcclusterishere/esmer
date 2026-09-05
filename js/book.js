@@ -166,6 +166,25 @@
      No password is collected because this repo must never handle one: auth
      belongs to the McCluster control plane (docs/BACKEND-BOUNDARY.md). The
      plane emails a sign-in link to the address the inquiry already used. */
+  /* Google, when the McCluster project has it enabled. Same account the
+     email link produces — this is not an Esmer login. */
+  var googleBtn = document.querySelector('[data-account-google]');
+  if (googleBtn && sent && window.MCC) {
+    fetch('https://zmnhbrjyhxzhkxmhkexs.supabase.co/auth/v1/settings', {
+      headers: { apikey: 'sb_publishable_kr5NujBZ1n518IUMDoa2dQ_tqQAJef4' }
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (!j || !j.external || !j.external.google) return;
+        googleBtn.hidden = false;
+        googleBtn.addEventListener('click', function () {
+          googleBtn.disabled = true;
+          window.MCC.signInWithGoogle(location.origin + '/auth/?next=/book/');
+        });
+      })
+      .catch(function () { /* leave hidden; the email link still works */ });
+  }
+
   var accountBtn = document.querySelector('[data-account-start]');
   if (accountBtn && sent) {
     var accountStatus = sent.querySelector('[data-account-status]');

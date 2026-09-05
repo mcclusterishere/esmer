@@ -116,6 +116,7 @@ function page({ path, title, description, active, body, schema = [], extraJs = [
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${esc(canonical)}">
 <meta name="twitter:card" content="summary_large_image">
+${path === '/auth/' ? '<meta name="robots" content="noindex,nofollow">' : ''}
 <meta name="theme-color" content="#0b0b0c">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/css/site.css">
@@ -649,7 +650,11 @@ function bookPage() {
         <p>Make an account and this thread stays in one place — his reply, your
         details, and anything you send next. No password: we email you a link.</p>
         <div class="actions">
-          <button class="btn" type="button" data-account-start>Email me a sign-in link</button>
+          <!-- Hidden until the script confirms Google is enabled on the
+               McCluster project. It is the same McCluster account either
+               way — Esmer's site does not mint its own. -->
+          <button class="btn" type="button" data-account-google hidden>Continue with Google</button>
+          <button class="btn btn--ghost" type="button" data-account-start>Email me a sign-in link</button>
           <a class="btn btn--ghost" href="/">Not now</a>
         </div>
         <p class="form__status" role="status" aria-live="polite" data-account-status></p>
@@ -669,7 +674,54 @@ function bookPage() {
     active: 'book',
     body,
     schema: [personSchema],
-    extraJs: ['/js/book.js']
+    extraJs: ['/js/mcc-auth.js', '/js/book.js']
+  });
+}
+
+function authCallback() {
+  /* Where a McCluster sign-in returns to on Esmer's own domain. It renders
+     no account data — it spends the authorization code and moves on.
+
+     The account is McCluster's, not Esmer's: same Supabase project, same
+     auth user id as matthew.mccluster.org. This repo mints no identity of
+     its own (docs/BACKEND-BOUNDARY.md). */
+  const body = `
+<section class="band arrival">
+  <div class="wrap">
+    <p class="eyebrow">McCluster account</p>
+    <h1 class="h-section" id="auth-head">Signing you in…</h1>
+    <p class="lede" id="auth-body">One moment.</p>
+  </div>
+</section>
+<script src="/js/mcc-auth.js" defer></script>
+<script defer>
+  window.addEventListener('load', function () {
+    var head = document.getElementById('auth-head');
+    var body = document.getElementById('auth-body');
+    function backTo() {
+      var raw = new URLSearchParams(location.search).get('next') || '/book/';
+      /* Same-origin only. An absolute URL here would make the sign-in flow
+         an open redirect that arrives carrying a fresh session. */
+      return (raw.charAt(0) === '/' && raw.charAt(1) !== '/') ? raw : '/book/';
+    }
+    window.MCC.complete().then(function (user) {
+      if (!user) { head.textContent = 'Nothing to finish'; body.innerHTML = '<a href="/book/">Back to Book</a>'; return; }
+      head.textContent = 'You are signed in';
+      body.innerHTML = 'Taking you back…';
+      location.replace(backTo());
+    }).catch(function (error) {
+      head.textContent = 'That sign-in did not complete';
+      body.textContent = error.message || 'Please try again.';
+    });
+  });
+<\/script>`;
+
+  return page({
+    path: '/auth/',
+    title: `Signing in — ${site.artistName}`,
+    description: 'Completing your McCluster sign-in.',
+    active: 'book',
+    body
   });
 }
 
@@ -696,6 +748,7 @@ const routes = [
   ['press/index.html', pressPage()],
   ['logs/index.html', logsPage()],
   ['book/index.html', bookPage()],
+  ['auth/index.html', authCallback()],
   ['404.html', notFound()],
   ...releases.map((r, i) => [`music/${r.slug}/index.html`, releasePage(r, i)])
 ];

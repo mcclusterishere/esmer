@@ -142,6 +142,8 @@ because `docs/AUTHORITY-LINK-GRAPH.md` needs `/`, `/music`, `/music/<slug>`,
   answerable instead of needing three emails to become one
 - after a confirmed send, a passwordless account offer so the visitor keeps the
   thread — never offered when the send failed
+- sign-in is a **McCluster** account, shared with every McCluster-powered site —
+  Google (PKCE/S256) or an email link, with `/auth/` completing the redirect
 
 ### Deliberately absent
 

@@ -12,6 +12,7 @@
 <meta property="og:description" content="Guitar, voice, production and songwriting lessons with Justin Esmer, in person in Connecticut or online — plus recording, session support, performance and collaboration.">
 <meta property="og:url" content="https://www.esmermusic.com/book/">
 <meta name="twitter:card" content="summary_large_image">
+
 <meta name="theme-color" content="#0b0b0c">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/css/site.css">
@@ -636,7 +637,11 @@
         <p>Make an account and this thread stays in one place — his reply, your
         details, and anything you send next. No password: we email you a link.</p>
         <div class="actions">
-          <button class="btn" type="button" data-account-start>Email me a sign-in link</button>
+          <!-- Hidden until the script confirms Google is enabled on the
+               McCluster project. It is the same McCluster account either
+               way — Esmer's site does not mint its own. -->
+          <button class="btn" type="button" data-account-google hidden>Continue with Google</button>
+          <button class="btn btn--ghost" type="button" data-account-start>Email me a sign-in link</button>
           <a class="btn btn--ghost" href="/">Not now</a>
         </div>
         <p class="form__status" role="status" aria-live="polite" data-account-status></p>
@@ -683,6 +688,7 @@
   </div>
 </nav>
 <script src="/js/app.js" defer></script>
+<script src="/js/mcc-auth.js" defer></script>
 <script src="/js/book.js" defer></script>
 </body>
 </html>

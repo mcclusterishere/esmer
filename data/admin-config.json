@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "updated": "2026-09-04",
+  "tenantKey": "esmer",
+  "apiBase": "https://api.mccluster.org",
+  "auth": {
+    "mode": "mccluster-control-plane",
+    "existingBootstrapEndpoint": "/v1/me",
+    "browserServiceRoleAllowed": false
+  },
+  "navigation": {
+    "desktop": [
+      "overview",
+      "site",
+      "music",
+      "logs",
+      "media",
+      "bookings",
+      "contacts",
+      "analytics",
+      "press-seo",
+      "network",
+      "settings"
+    ],
+    "mobilePrimary": ["overview","site","bookings","media","more"],
+    "mobileMore": ["music","logs","contacts","analytics","press-seo","network","settings"]
+  },
+  "contentStates": ["draft","published","scheduled","archived"],
+  "bookingPipeline": [
+    "new",
+    "needs-reply",
+    "qualified",
+    "date-proposed",
+    "confirmed",
+    "completed",
+    "archived",
+    "declined"
+  ],
+  "mediaCollections": [
+    "portraits",
+    "live",
+    "studio",
+    "releases",
+    "press",
+    "video",
+    "360-spatial",
+    "prim3-private",
+    "archive"
+  ],
+  "mediaRightsStates": [
+    "esmer-owned-supplied",
+    "mccluster-created-licensed-for-site",
+    "platform-artwork-embed-only",
+    "press-reference-only",
+    "unknown-do-not-publish"
+  ],
+  "roles": {
+    "esmer-owner": {
+      "can": [
+        "edit-ordinary-site-content",
+        "preview",
+        "publish-ordinary-content",
+        "manage-releases",
+        "manage-streaming-links",
+        "manage-logs",
+        "manage-media",
+        "manage-booking-forms",
+        "manage-inquiries",
+        "manage-contacts",
+        "view-analytics",
+        "propose-press-sources",
+        "use-network-when-enabled"
+      ],
+      "cannotWithoutPlatformReview": [
+        "change-canonical-identity",
+        "change-schema-entity-id",
+        "change-canonical-domain-binding",
+        "change-prim3-ownership-or-credit-language",
+        "remove-powered-by-mccluster",
+        "change-auth-or-api-bindings"
+      ]
+    },
+    "esmer-collaborator": {
+      "status": "future",
+      "scope": "role-limited by server-side authorization"
+    },
+    "mccluster-platform-admin": {
+      "scope": "platform, identity-critical, legal, integration and recovery controls"
+    }
+  },
+  "proposedApi": {
+    "note": "Contract proposal only. Prefer a generic tenant namespace if the McCluster control plane already defines one.",
+    "endpoints": [
+      "GET /v1/clients/esmer/me",
+      "GET /v1/clients/esmer/content",
+      "PATCH /v1/clients/esmer/content/:id",
+      "POST /v1/clients/esmer/publish",
+      "GET /v1/clients/esmer/media",
+      "POST /v1/clients/esmer/media",
+      "PATCH /v1/clients/esmer/media/:id",
+      "GET /v1/clients/esmer/inquiries",
+      "GET /v1/clients/esmer/inquiries/:id",
+      "PATCH /v1/clients/esmer/inquiries/:id",
+      "GET /v1/clients/esmer/contacts",
+      "GET /v1/clients/esmer/analytics",
+      "GET /v1/clients/esmer/press",
+      "POST /v1/clients/esmer/press",
+      "GET /v1/clients/esmer/network"
+    ]
+  },
+  "mobbinReferenceBoard": "docs/ADMIN-MOBBIN-REFERENCE-BOARD.md",
+  "functionalSpec": "docs/ADMIN-BACKEND-DESIGN.md"
+}

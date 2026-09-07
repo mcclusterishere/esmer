@@ -5,19 +5,21 @@ You are the primary site builder for the **Esmer** client site.
 1. Read this repo's `AGENTS.md` completely before editing anything.
 2. Read `docs/IDENTITY-LOCK.md` completely before using any public biography, music metadata, image, video, social profile, or external research. **No fuzzy identity matching is allowed.**
 3. Read `docs/DESIGN-DIRECTION-v1.md` completely before making any visual or UX decision. It is the approved public-site design source of truth.
-4. Read `docs/ESMER-DOSSIER.md` and `docs/MEDIA-MANIFEST.json` before implementing public content/media.
+4. Read `docs/ESMER-DOSSIER.md`, `docs/MEDIA-MANIFEST.json`, and `data/site-seed.json` before implementing public content/media.
 5. Read `docs/PRESS-SOURCE-REGISTER.md`, `docs/AUTHORITY-LINK-GRAPH.md`, and `data/press-sources.json` before implementing SEO, Press, structured data, canonical URLs, internal links, release pages, or third-party source cards.
-6. Read `docs/ADMIN-BACKEND-DESIGN.md` **and** `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md` before implementing `/admin` or any private client-facing management UI.
-7. Read `docs/VR-SCROLL-ARCHITECTURE.md` before implementing the studio/VR slot.
-8. Read the current `AGENTS.md`, `CLAUDE.md`, `docs/control-plane/ECOSYSTEM.md`, and `docs/control-plane/SATELLITE.md` in `mcclusterishere/mccluster` because this repository is a McCluster satellite/client property.
-9. Do **not** create a second backend, auth system, database, billing system, CRM, social scheduler, admin data store, or Cloudflare Worker. The Esmer private admin **UI can live in this repo**, but authenticated state/persistence belongs to the McCluster control plane.
-10. The primary public UX is **mobile first** with exactly three main bottom destinations: **Music / Esmer / Book**.
-11. The center Esmer experience is a cinematic, immersive scroll story. It must work as a fast DOM-first site before any 3D/VR enhancement loads.
-12. Studio photos/video/360/3D source assets will arrive after an on-site capture. Architect for them now; never invent the room, gear, address, or capabilities.
-13. Treat PRIM3 as confidential work in progress until Matthew McCluster explicitly approves public credits/material.
-14. Footer attribution on public pages: **Powered by McCluster** → `https://matthew.mccluster.org/`.
-15. Never fabricate or redraw an Esmer logo. Use supplied brand art only; typography is the fallback.
-16. Do not guess rates, Spotify IDs, publishing identifiers, studio address, gear models, credits, testimonials, services, or press identity matches.
+6. Read `data/domain-state.json` before hard-coding or configuring any canonical hostname. Domain ownership is pending and is **not** a build blocker.
+7. Read `docs/ADMIN-BACKEND-DESIGN.md`, `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md`, `data/admin-config.json`, and `admin/README.md` before implementing `/admin` or any private client-facing management UI.
+8. Read `docs/VR-SCROLL-ARCHITECTURE.md` before implementing the studio/VR slot.
+9. Read the current `AGENTS.md`, `CLAUDE.md`, `docs/control-plane/ECOSYSTEM.md`, and `docs/control-plane/SATELLITE.md` in `mcclusterishere/mccluster` because this repository is a McCluster satellite/client property.
+10. Read GitHub issue `#1` for the active first-build checklist and review gate.
+11. Do **not** create a second backend, auth system, database, billing system, CRM, social scheduler, admin data store, or Cloudflare Worker. The Esmer private admin **UI can live in this repo**, but authenticated state/persistence belongs to the McCluster control plane.
+12. The primary public UX is **mobile first** with exactly three main bottom destinations: **Music / Esmer / Book**.
+13. The center Esmer experience is a cinematic, immersive scroll story. It must work as a fast DOM-first site before any 3D/VR enhancement loads.
+14. Studio photos/video/360/3D source assets will arrive after an on-site capture. Architect for them now; never invent the room, gear, address, or capabilities.
+15. Treat PRIM3 as confidential work in progress until Matthew McCluster explicitly approves public credits/material.
+16. Footer attribution on public pages: **Powered by McCluster** → `https://matthew.mccluster.org/`.
+17. Never fabricate or redraw an Esmer logo. Use supplied brand art only; typography is the fallback.
+18. Do not guess rates, Spotify IDs, publishing identifiers, studio address, gear models, credits, testimonials, services, or press identity matches.
 
 ## Identity lock — non-negotiable
 
@@ -62,11 +64,14 @@ Implement the verified source graph and SEO rules in `docs/AUTHORITY-LINK-GRAPH.
 
 ### Existing-domain / backlink rule
 
-Existing external pages already link Justin Esmer / Esmer to `https://www.esmermusic.com/`. Before choosing a different canonical hostname, confirm whether Justin controls that domain.
+Existing external pages already link Justin Esmer / Esmer to `https://www.esmermusic.com/`, but current ownership/control is unconfirmed.
 
-- If he controls it, preserve it as the canonical deployment unless Matthew and Justin deliberately choose otherwise.
-- If a different canonical domain is required, preserve the existing authority with permanent 301 redirects.
-- Do not discard known inbound-link equity by silently abandoning `esmermusic.com`.
+Read `data/domain-state.json` and **continue building regardless**.
+
+- Centralize the canonical hostname in configuration.
+- Do not hard-code `esmermusic.com` as owned/controlled.
+- If Justin confirms control, preserve the existing inbound-link equity.
+- If he does not control it, use the selected replacement domain and update canonical metadata/backlink outreach after the decision.
 
 Do not republish full third-party articles. Use original summaries and links.
 
@@ -74,7 +79,7 @@ Do not republish full third-party articles. Use original summaries and links.
 
 Justin needs a real tenant-facing backend, not a static site that only McCluster can change.
 
-Build the **UI/experience** described in `docs/ADMIN-BACKEND-DESIGN.md`, using the approved functional/visual reference synthesis in `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md`. The required product includes:
+Build the **UI/experience** described in `docs/ADMIN-BACKEND-DESIGN.md`, using the approved functional/visual reference synthesis in `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md` and the implementation seed in `data/admin-config.json`. The required product includes:
 
 - Overview dashboard
 - Site editor with preview and publish states

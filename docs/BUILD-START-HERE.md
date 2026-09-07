@@ -13,11 +13,15 @@ Claude: this file is the handoff. The research and design work has already been 
 7. `docs/PRESS-SOURCE-REGISTER.md`
 8. `docs/AUTHORITY-LINK-GRAPH.md`
 9. `data/press-sources.json`
-10. `docs/ADMIN-BACKEND-DESIGN.md`
-11. `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md`
-12. `docs/VR-SCROLL-ARCHITECTURE.md`
-13. `docs/WEBSITE-STUDIO-BARTER-AGREEMENT-DRAFT.md` for ownership/scope boundaries only; do not convert legal language into public marketing copy
-14. Current upstream `mcclusterishere/mccluster/AGENTS.md`, `CLAUDE.md`, `docs/control-plane/ECOSYSTEM.md`, and `docs/control-plane/SATELLITE.md`
+10. `data/site-seed.json`
+11. `data/domain-state.json`
+12. `docs/ADMIN-BACKEND-DESIGN.md`
+13. `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md`
+14. `data/admin-config.json`
+15. `docs/VR-SCROLL-ARCHITECTURE.md`
+16. `docs/WEBSITE-STUDIO-BARTER-AGREEMENT-DRAFT.md` for ownership/scope boundaries only; do not convert legal language into public marketing copy
+17. Current upstream `mcclusterishere/mccluster/AGENTS.md`, `CLAUDE.md`, `docs/control-plane/ECOSYSTEM.md`, and `docs/control-plane/SATELLITE.md`
+18. GitHub issue `#1` for the active implementation checklist and review gate
 
 If these files answer the question, **do not perform fresh external research**. Search only when a manifest/source link is dead, information must be refreshed for launch, or Matthew McCluster explicitly asks for new research.
 
@@ -97,6 +101,20 @@ Short version:
 
 Never silently reintroduce a rejected reference.
 
+For `/admin`, use `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md`. The private console is restrained and creator-operable, not a cinematic copy of the public site.
+
+---
+
+## Data seed and source graph
+
+Use `data/site-seed.json` as the implementation seed for verified identity, navigation, section order, catalog anchors, platform bindings and pending client inputs.
+
+Use `data/press-sources.json` for press/source cards and machine-readable authority relationships.
+
+Use `data/admin-config.json` for owner-console navigation, rights states, booking pipeline, role boundaries and API-contract planning.
+
+Do not convert a source into a biography claim merely because it is present. Identity lock and publication approval rules still apply.
+
 ---
 
 ## Authority / Press / search graph
@@ -113,13 +131,14 @@ Build a real `/press` source hub and link relevant sources from release/log page
 
 External sources already link Justin Esmer / Esmer to `https://www.esmermusic.com/`.
 
-Before deployment, confirm Justin controls that domain.
+Ownership/control is currently **unconfirmed**. Read `data/domain-state.json`.
 
-- If yes: strongly prefer preserving it as the canonical official domain.
-- If another canonical domain is intentionally selected: 301 redirect the existing official hostname to the replacement and preserve meaningful paths when practical.
-- Do not discard those existing inbound links by letting the recognized official domain die.
+**This is not a build blocker. Continue implementation.**
 
-The fact that external sources link the domain does not itself prove Justin currently controls it; verify before configuration.
+- Keep canonical-domain handling centralized in one config value.
+- If Justin confirms he controls `esmermusic.com`, strongly prefer preserving that inbound-link equity.
+- If he does not control it, proceed with the selected replacement domain and update canonical metadata/backlink outreach after the domain decision.
+- Do not hard-code `esmermusic.com` into components as if ownership were established.
 
 ---
 
@@ -151,10 +170,12 @@ No stock studio photos.
 
 ## Private owner backend
 
-Justin must be able to operate the site himself. Read both:
+Justin must be able to operate the site himself. Read:
 
 - `docs/ADMIN-BACKEND-DESIGN.md` — product architecture, modules, permissions, API boundary
 - `docs/ADMIN-MOBBIN-REFERENCE-BOARD.md` — approved visual/interaction language researched from Mobbin
+- `data/admin-config.json` — implementation seed for navigation, states, roles and proposed API surface
+- `admin/README.md` — directory-specific build handoff
 
 The private admin can live under `/admin` in this repo, but it is a **tenant UI**, not a separate backend.
 
@@ -197,7 +218,7 @@ If the tenant endpoints are not implemented yet, build the UI behind an API-clie
 - mobile public shell;
 - three-tab bottom bar;
 - Esmer home/editorial structure;
-- real catalog metadata and platform links from the dossier;
+- real catalog metadata and platform links from the repo seed;
 - release-art slots wired to approved/authorized sources;
 - mini-player behavior / player shell;
 - Logs / Selected Work architecture;
@@ -220,7 +241,8 @@ If the tenant endpoints are not implemented yet, build the UI behind an API-clie
 - final studio hero photos/video;
 - PRIM3 credits that have not been earned/approved;
 - rates Esmer has not supplied;
-- testimonials nobody gave.
+- testimonials nobody gave;
+- domain ownership/control that Justin has not confirmed.
 
 ---
 
@@ -266,6 +288,7 @@ Do not create a second social backend in this repo.
 - polished `MUSIC | ESMER | BOOK` bar;
 - Esmer home page with the full scroll section sequence represented;
 - real release metadata wired in;
+- Press/authority page wired to repo data;
 - reference-driven visual system established;
 - studio-world section visibly carved into the architecture but not faked;
 - booking UI present;

@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "updated": "2026-09-04",
+  "status": "implementation seed; verify client-controlled fields before public launch",
+  "identity": {
+    "publicName": "Justin Esmer",
+    "artistName": "Esmer",
+    "canonicalArtistId": "justin-esmer",
+    "appleMusicArtistId": "1542619015",
+    "appleMusicUrl": "https://music.apple.com/us/artist/esmer/1542619015",
+    "locationLanguage": "Connecticut; Hamden/New Haven roots",
+    "roles": [
+      "singer-songwriter",
+      "guitarist",
+      "vocalist",
+      "producer",
+      "multi-instrumentalist"
+    ],
+    "identityLock": "docs/IDENTITY-LOCK.md"
+  },
+  "navigation": [
+    {"key":"music","label":"Music","path":"/music"},
+    {"key":"esmer","label":"Esmer","path":"/"},
+    {"key":"book","label":"Book","path":"/book"}
+  ],
+  "crawlableRoutes": [
+    "/",
+    "/music",
+    "/press",
+    "/book",
+    "/logs"
+  ],
+  "homeSections": [
+    {"key":"identity-arrival","status":"build-now"},
+    {"key":"current-sound","status":"build-now"},
+    {"key":"who-he-is","status":"build-now"},
+    {"key":"logs","status":"build-now"},
+    {"key":"selected-work","status":"build-now"},
+    {"key":"live-human","status":"build-now"},
+    {"key":"studio-threshold","status":"build-now"},
+    {"key":"studio-world-vr","status":"reserved-pending-assets","source":"docs/VR-SCROLL-ARCHITECTURE.md"},
+    {"key":"book-finale","status":"build-now"}
+  ],
+  "releases": [
+    {"title":"Rotten","type":"EP","year":2022,"status":"verified-catalog-anchor"},
+    {"title":"Ponyo","type":"single","year":2023,"status":"verified-catalog-anchor"},
+    {"title":"Train Stops","type":"EP","year":2023,"status":"verified-catalog-anchor"},
+    {"title":"Achilles Heel","type":"EP","year":2024,"status":"verified-catalog-anchor","hyperfollow":"https://distrokid.com/hyperfollow/esmer/achilles-heel-2"},
+    {"title":"YCANTUC","type":"single","year":2025,"status":"verified-catalog-anchor"},
+    {"title":"Heather","type":"single","year":2025,"status":"verified-catalog-anchor"},
+    {"title":"Dive In // Gravitate","type":"single","year":2025,"status":"verified-catalog-anchor","hyperfollow":"https://distrokid.com/hyperfollow/esmer/dive-in--gravitate"},
+    {"title":"My Everything","type":"single","year":2026,"status":"verified-catalog-anchor"}
+  ],
+  "pressData": {
+    "sourceFile": "data/press-sources.json",
+    "humanBrief": "docs/AUTHORITY-LINK-GRAPH.md",
+    "quickRegister": "docs/PRESS-SOURCE-REGISTER.md"
+  },
+  "services": {
+    "status": "client-confirmation-required",
+    "defaultPublicEnabled": false,
+    "candidateCategories": [
+      "recording",
+      "production",
+      "engineering/session support",
+      "musician work",
+      "live performance",
+      "collaboration/feature",
+      "general inquiry"
+    ],
+    "rule": "Do not publicly claim a service until Esmer confirms he offers it."
+  },
+  "studio": {
+    "status": "pending-capture",
+    "publicAddress": null,
+    "gearList": null,
+    "heroMedia": null,
+    "panorama360": null,
+    "marbleWorld": null,
+    "rule": "Reserve the immersive section in the build; never fabricate the room, equipment or locality."
+  },
+  "prim3": {
+    "status": "private-work-in-progress",
+    "publicCredits": null,
+    "rule": "Do not expose PRIM3 material or credits until Matthew McCluster approves them."
+  },
+  "platform": {
+    "poweredBy": {
+      "label": "Powered by McCluster",
+      "url": "https://matthew.mccluster.org/"
+    },
+    "apiBase": "https://api.mccluster.org",
+    "tenantKey": "esmer"
+  },
+  "pendingClientInputs": [
+    "final preferred biography wording",
+    "current official social URLs",
+    "service list",
+    "rates or inquiry-only decision",
+    "booking destination and preferred contact method",
+    "approved artist/logo files",
+    "approved release artwork rights",
+    "studio capture and 360 media",
+    "domain ownership/control decision",
+    "final PRIM3 credits"
+  ]
+}

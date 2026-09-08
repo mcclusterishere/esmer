@@ -3,7 +3,6 @@
   "updated": "2026-09-04",
   "_source": "docs/ESMER-DOSSIER.md §4, anchored to Apple Music artist 1542619015 per docs/IDENTITY-LOCK.md. Every UPC, ISRC and composer string here is transcribed from that dossier. Nothing on this list was inferred from a title match.",
   "_artworkRule": "docs/MEDIA-MANIFEST.json sets publicPressMediaIsReferenceOnly and states that a reference image is not a rights clearance. artworkReference is therefore recorded for lookup ONLY and is never rendered. A release shows its cover once Esmer supplies the master art: drop the file in assets/artwork/ and set `artwork`. Until then the cover slot is typographic.",
-
   "releases": [
     {
       "slug": "my-everything",
@@ -13,10 +12,14 @@
       "label": "JAJE",
       "upc": "199936251997",
       "appleMusic": "https://music.apple.com/us/album/my-everything-single/1866156580",
-      "artwork": null,
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1e/4b/80/1e4b8067-8cb2-306b-c224-545cc2dc1a85/artwork.jpg/1200x1200bb.jpg",
       "artworkReference": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1e/4b/80/1e4b8067-8cb2-306b-c224-545cc2dc1a85/artwork.jpg/1200x1200bb.jpg",
       "tracks": [
-        { "title": "My Everything", "isrc": "QZFYY2679702", "composers": "Justin Anthony Esmer" }
+        {
+          "title": "My Everything",
+          "isrc": "QZFYY2679702",
+          "composers": "Justin Anthony Esmer"
+        }
       ]
     },
     {
@@ -26,14 +29,26 @@
       "releaseDate": "2025-07-28",
       "label": "JAJE",
       "upc": "199511411747",
-      "genres": ["Alternative", "R&B/Soul"],
+      "genres": [
+        "Alternative",
+        "R&B/Soul"
+      ],
       "appleMusic": "https://music.apple.com/us/album/dive-in-gravitate-single/1828237962",
       "hyperfollow": "https://distrokid.com/hyperfollow/esmer/dive-in--gravitate",
-      "artwork": null,
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d9/be/cb/d9becbd3-db4e-0c96-65a2-50f4b4699b4b/artwork.jpg/1200x1200bb.jpg",
       "artworkReference": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/d9/be/cb/d9becbd3-db4e-0c96-65a2-50f4b4699b4b/artwork.jpg/1200x1200bb.jpg",
       "tracks": [
-        { "title": "Dive In", "feat": "Sammy Atlas", "isrc": "QZWFK2581891", "composers": "Sammy Atlas & Justin Anthony Esmer" },
-        { "title": "Gravitate", "isrc": "QZWFK2581892", "composers": "Justin Anthony Esmer" }
+        {
+          "title": "Dive In",
+          "feat": "Sammy Atlas",
+          "isrc": "QZWFK2581891",
+          "composers": "Sammy Atlas & Justin Anthony Esmer"
+        },
+        {
+          "title": "Gravitate",
+          "isrc": "QZWFK2581892",
+          "composers": "Justin Anthony Esmer"
+        }
       ]
     },
     {
@@ -44,10 +59,14 @@
       "label": "JAJE",
       "upc": "199334018758",
       "appleMusic": "https://music.apple.com/us/album/heather-single/1811009075",
-      "artwork": null,
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/12/a2/0f12a215-c8d1-c717-836c-9b56f0e9ebe3/artwork.jpg/1200x1200bb.jpg",
       "artworkReference": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/12/a2/0f12a215-c8d1-c717-836c-9b56f0e9ebe3/artwork.jpg/1200x1200bb.jpg",
       "tracks": [
-        { "title": "Heather", "isrc": "QZNWS2552136", "composers": "Justin Anthony Justado Esmer" }
+        {
+          "title": "Heather",
+          "isrc": "QZNWS2552136",
+          "composers": "Justin Anthony Justado Esmer"
+        }
       ]
     },
     {
@@ -58,10 +77,14 @@
       "label": "JAJE",
       "upc": "199087634137",
       "appleMusic": "https://music.apple.com/us/album/ycantuc-single/1792113491",
-      "artwork": null,
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/42/20/94/422094e3-6611-890d-f16d-0a7b186aab0e/artwork.jpg/1200x1200bb.jpg",
       "artworkReference": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/42/20/94/422094e3-6611-890d-f16d-0a7b186aab0e/artwork.jpg/1200x1200bb.jpg",
       "tracks": [
-        { "title": "YCANTUC", "isrc": "QZFZ72593049", "composers": "Justin Anthony Esmer" }
+        {
+          "title": "YCANTUC",
+          "isrc": "QZFZ72593049",
+          "composers": "Justin Anthony Esmer"
+        }
       ]
     },
     {
@@ -73,14 +96,33 @@
       "upc": "198662722603",
       "appleMusic": "https://music.apple.com/us/album/achilles-heel-ep/1764061285",
       "hyperfollow": "https://distrokid.com/hyperfollow/esmer/achilles-heel-2",
-      "artwork": null,
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/51/d9/05/51d90537-f171-f1f1-b90d-05730564cdfb/artwork.jpg/1200x1200bb.jpg",
       "artworkReference": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/51/d9/05/51d90537-f171-f1f1-b90d-05730564cdfb/artwork.jpg/1200x1200bb.jpg",
       "tracks": [
-        { "title": "Wanted More", "isrc": "QZTB72457900", "composers": "Justin Anthony Justado Esmer & Darian Jaxon Eastman" },
-        { "title": "Waves", "isrc": "QZTB42400744", "composers": "Justin Anthony Justado Esmer" },
-        { "title": "2nd Street", "isrc": "QZTB72457901", "composers": "Justin Anthony Justado Esmer" },
-        { "title": "Allison", "provisional": "Named as an Achilles Heel song in Esmer's long-form interview. Catalog ISRC and composer credit not yet re-checked — dossier §4 says re-check before publishing them, so they are omitted rather than guessed." },
-        { "title": "Achilles Heel", "isrc": "QZTB72457903", "composers": "Justin Anthony Justado Esmer" }
+        {
+          "title": "Wanted More",
+          "isrc": "QZTB72457900",
+          "composers": "Justin Anthony Justado Esmer & Darian Jaxon Eastman"
+        },
+        {
+          "title": "Waves",
+          "isrc": "QZTB42400744",
+          "composers": "Justin Anthony Justado Esmer"
+        },
+        {
+          "title": "2nd Street",
+          "isrc": "QZTB72457901",
+          "composers": "Justin Anthony Justado Esmer"
+        },
+        {
+          "title": "Allison",
+          "provisional": "Named as an Achilles Heel song in Esmer's long-form interview. Catalog ISRC and composer credit not yet re-checked — dossier §4 says re-check before publishing them, so they are omitted rather than guessed."
+        },
+        {
+          "title": "Achilles Heel",
+          "isrc": "QZTB72457903",
+          "composers": "Justin Anthony Justado Esmer"
+        }
       ]
     },
     {
@@ -91,14 +133,31 @@
       "label": "JAJE",
       "upc": "198090018644",
       "appleMusic": "https://music.apple.com/us/album/train-stops-ep/1716772604",
-      "artwork": null,
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/f5/90/56/f5905676-ea51-60d0-cc2e-0a698fe3728f/artwork.jpg/1200x1200bb.jpg",
       "artworkReference": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/f5/90/56/f5905676-ea51-60d0-cc2e-0a698fe3728f/artwork.jpg/1200x1200bb.jpg",
       "tracks": [
-        { "title": "Nails", "isrc": "QZTBD2311552" },
-        { "title": "Train Stops", "feat": "Nostalgik", "isrc": "QZWFE2338440", "composers": "Justin Anthony Esmer & Keon Gurley" },
-        { "title": "Iris", "isrc": "QZWFE2338441" },
-        { "title": "Lose Myself", "isrc": "QZWFE2338442" },
-        { "title": "Love Is Allowed", "isrc": "QZWFE2338443" }
+        {
+          "title": "Nails",
+          "isrc": "QZTBD2311552"
+        },
+        {
+          "title": "Train Stops",
+          "feat": "Nostalgik",
+          "isrc": "QZWFE2338440",
+          "composers": "Justin Anthony Esmer & Keon Gurley"
+        },
+        {
+          "title": "Iris",
+          "isrc": "QZWFE2338441"
+        },
+        {
+          "title": "Lose Myself",
+          "isrc": "QZWFE2338442"
+        },
+        {
+          "title": "Love Is Allowed",
+          "isrc": "QZWFE2338443"
+        }
       ]
     },
     {
@@ -109,10 +168,14 @@
       "label": "JAJE",
       "upc": "197511385822",
       "appleMusic": "https://music.apple.com/us/album/ponyo-single/1663071890",
-      "artwork": null,
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/e1/ab/5d/e1ab5d8d-5e9f-618a-3379-d7497e704c2e/artwork.jpg/1200x1200bb.jpg",
       "artworkReference": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/e1/ab/5d/e1ab5d8d-5e9f-618a-3379-d7497e704c2e/artwork.jpg/1200x1200bb.jpg",
       "tracks": [
-        { "title": "Ponyo", "isrc": "QZFYX2387420", "composers": "Justin Anthony Esmer" }
+        {
+          "title": "Ponyo",
+          "isrc": "QZFYX2387420",
+          "composers": "Justin Anthony Esmer"
+        }
       ]
     },
     {
@@ -123,23 +186,53 @@
       "label": "JAJE",
       "upc": "197208763452",
       "appleMusic": "https://music.apple.com/us/album/rotten-ep/1647655042",
-      "artwork": null,
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/27/85/03/27850312-9df5-7a13-ea28-e7164974ba71/artwork.jpg/1200x1200bb.jpg",
       "artworkReference": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/27/85/03/27850312-9df5-7a13-ea28-e7164974ba71/artwork.jpg/1200x1200bb.jpg",
       "tracks": [
-        { "title": "Red Wine", "isrc": "QZPLR2239932" },
-        { "title": "Deathbed", "isrc": "QZNWW2293612" },
-        { "title": "Siren", "isrc": "QZPLR2239933" },
-        { "title": "Rot", "isrc": "QZPLR2239934" },
-        { "title": "Hickory Eyes", "isrc": "QZPLR2239935" }
+        {
+          "title": "Red Wine",
+          "isrc": "QZPLR2239932"
+        },
+        {
+          "title": "Deathbed",
+          "isrc": "QZNWW2293612"
+        },
+        {
+          "title": "Siren",
+          "isrc": "QZPLR2239933"
+        },
+        {
+          "title": "Rot",
+          "isrc": "QZPLR2239934"
+        },
+        {
+          "title": "Hickory Eyes",
+          "isrc": "QZPLR2239935"
+        }
       ]
     }
   ],
-
   "_alsoInCatalogNote": "Dossier §4 surfaces these without an Apple Music URL, UPC or track metadata. They are listed so the catalog is not misrepresented as complete, but they get no detail page until that metadata is verified.",
   "alsoInCatalog": [
-    { "title": "Portland, Or // Then Again", "year": "2021" },
-    { "title": "Waves", "format": "Single", "year": "2024" },
-    { "title": "inday's lullaby", "format": "Single", "year": "2024" },
-    { "title": "Silhouette", "artist": "Cam Hall", "credit": "feat. Esmer", "note": "appears-on credit" }
+    {
+      "title": "Portland, Or // Then Again",
+      "year": "2021"
+    },
+    {
+      "title": "Waves",
+      "format": "Single",
+      "year": "2024"
+    },
+    {
+      "title": "inday's lullaby",
+      "format": "Single",
+      "year": "2024"
+    },
+    {
+      "title": "Silhouette",
+      "artist": "Cam Hall",
+      "credit": "feat. Esmer",
+      "note": "appears-on credit"
+    }
   ]
 }

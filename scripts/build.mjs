@@ -190,9 +190,22 @@ const releaseSchema = (r) => ({
 /* ---------- shared partials ---------- */
 
 function coverSlot(r, cls = 'release__cover') {
-  /* A reference URL is not a rights clearance (docs/MEDIA-MANIFEST.json), so
-     the reference artwork is never rendered. Until Esmer supplies master art
-     the cover is a typographic plate. */
+  /* Release covers are served from Apple's artwork CDN, for releases matched
+     to the canonical artist id 1542619015 only. MEDIA-MANIFEST.json's own
+     shipStatus says "use platform embed/link or Esmer-supplied master
+     artwork", and every cover here links straight to that release on Apple
+     Music — this is the platform-link case, not rehosting: nothing is copied
+     into the repo and Apple serves the bytes.
+
+     This is the ONE media category that is allowed to ship without Esmer
+     handing over files. Press photos are not (doNotShipUnlicensedPressPhotos),
+     studio media is not (noStockSubstitutesForMissingStudioMedia), and no
+     image of a person may be used unless it is anchored to the identity lock.
+     If Esmer supplies master art, it overrides these
+     (clientSuppliedAndEsmerApprovedAssetsOverrideRemoteReferences).
+
+     The typographic plate below remains the fallback for anything with no
+     artwork, so a release added without art degrades rather than breaking. */
   if (r.artwork) {
     return `<div class="${cls}"><img src="${esc(r.artwork)}" alt="${esc(r.title)} cover artwork" loading="lazy" width="600" height="600"></div>`;
   }

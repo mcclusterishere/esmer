@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Esmer Owner — McCluster</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#f2efe9">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./css/admin.css">
+</head>
+<body>
+<a class="admin-skip" href="#admin-main">Skip to content</a>
+
+<section class="login-shell" id="login-shell" aria-labelledby="login-title">
+  <div class="login-brand"><a href="../">ESMER</a><span>OWNER CONSOLE</span></div>
+  <div class="login-layout">
+    <div class="login-intro">
+      <p class="admin-eyebrow">Private / Esmer tenant</p>
+      <h1 id="login-title">Your site.<br>Your records.<br>Your room.</h1>
+      <p>Manage releases, site copy, media, inquiries and performance from one McCluster-powered console.</p>
+      <div class="login-status"><span class="pulse-dot"></span> McCluster control plane</div>
+    </div>
+    <form class="login-card" id="login-form">
+      <div>
+        <p class="admin-eyebrow">Owner sign in</p>
+        <h2>Welcome back, Justin.</h2>
+        <p class="login-help">Use your approved owner email. We'll send a secure sign-in link — no password is stored in this site.</p>
+      </div>
+      <label class="admin-field"><span>Email</span><input id="owner-email" type="email" autocomplete="email" value="justinesmer@gmail.com" required></label>
+      <button class="admin-primary" type="submit">Email me a sign-in link <span>→</span></button>
+      <button class="admin-secondary" id="google-login" type="button">Continue with Google</button>
+      <p class="login-message" id="login-message" aria-live="polite"></p>
+      <p class="login-fine">Authorized owner: <strong>justinesmer@gmail.com</strong></p>
+    </form>
+  </div>
+  <footer class="login-footer"><a href="../">← Public site</a><a href="https://matthew.mccluster.org/" target="_blank" rel="noopener">Powered by McCluster ↗</a></footer>
+</section>
+
+<div class="admin-app" id="admin-app" hidden>
+  <aside class="admin-rail">
+    <div class="rail-brand"><strong>ESMER</strong><span>OWNER</span></div>
+    <nav class="rail-nav" aria-label="Owner console">
+      <button data-view="overview" aria-current="page">Overview</button>
+      <button data-view="site">Site</button>
+      <button data-view="music">Music</button>
+      <button data-view="logs">Logs</button>
+      <button data-view="media">Media</button>
+      <button data-view="bookings">Bookings <span class="nav-count">0</span></button>
+      <button data-view="contacts">Contacts</button>
+      <button data-view="analytics">Analytics</button>
+      <button data-view="press">Press / SEO</button>
+      <button data-view="network">Network</button>
+      <button data-view="settings">Settings</button>
+    </nav>
+    <div class="rail-bottom"><span id="rail-email">justinesmer@gmail.com</span><button id="sign-out" type="button">Sign out</button></div>
+  </aside>
+
+  <main class="admin-main" id="admin-main">
+    <header class="admin-header">
+      <div><p class="admin-eyebrow" id="view-kicker">Owner console</p><h1 id="view-title">Overview</h1></div>
+      <div class="header-actions"><span class="save-state" id="save-state">Live data</span><a class="admin-secondary admin-link" href="../" target="_blank">Preview site ↗</a></div>
+    </header>
+
+    <section class="admin-view" id="view-overview" data-admin-view="overview">
+      <div class="status-strip"><span><i class="status-live"></i> Site live</span><strong id="site-host">esmer.mccluster.org</strong><span id="data-mode">Connecting…</span></div>
+      <div class="metric-grid">
+        <article class="metric hero-metric"><span>Site</span><strong>Published</strong><p>Public shell is live. Draft changes will appear here when the content API is enabled.</p><button data-jump="site">Edit site →</button></article>
+        <article class="metric"><span>New inquiries</span><strong id="metric-inquiries">—</strong><p>Waiting for a reply</p></article>
+        <article class="metric"><span>Visitors · 30d</span><strong id="metric-visitors">—</strong><p>Creator-readable analytics</p></article>
+        <article class="metric"><span>Music clicks</span><strong id="metric-clicks">—</strong><p>Outbound listening actions</p></article>
+      </div>
+      <div class="admin-two-col">
+        <article class="panel"><div class="panel-head"><div><span class="admin-eyebrow">Site</span><h2>What needs you</h2></div><button data-jump="site">Open editor ↗</button></div><div class="task-list"><div><i></i><span><strong>Add approved artist media</strong><small>Portrait and studio slots are intentionally empty.</small></span><b>OPEN</b></div><div><i></i><span><strong>Confirm public service language</strong><small>Rates remain inquiry-only until confirmed.</small></span><b>REVIEW</b></div><div><i></i><span><strong>Studio capture</strong><small>Spatial section is reserved and waiting for source media.</small></span><b>LATER</b></div></div></article>
+        <article class="panel"><div class="panel-head"><div><span class="admin-eyebrow">Catalog</span><h2>Current release</h2></div><button data-jump="music">Manage ↗</button></div><div class="release-admin-card"><div class="release-admin-art">MY<br>EVERY<br>THING</div><div><span>09 JAN 2026 · SINGLE</span><h3>My Everything</h3><p>JAJE</p><b>Featured</b></div></div></article>
+      </div>
+    </section>
+
+    <section class="admin-view" id="view-site" data-admin-view="site" hidden>
+      <div class="editor-layout"><div class="editor-controls"><div class="publish-bar"><div><span class="admin-eyebrow">Published</span><strong>Home / Esmer</strong></div><button class="admin-primary" disabled>Publish</button></div><label class="admin-field"><span>Hero name</span><input value="ESMER" disabled><small>Identity-critical display field</small></label><label class="admin-field"><span>Opening line</span><textarea rows="4">Music built from guitar, harmony, low-slung vocals and the people in the room.</textarea></label><label class="admin-field"><span>Featured release</span><select><option>My Everything</option><option>Dive In // Gravitate</option><option>Heather</option></select></label><div class="editor-note">Production persistence remains in the McCluster control plane. This preview branch does not fabricate a second content backend.</div></div><div class="site-preview"><div class="preview-toolbar"><span>Mobile preview</span><a href="../" target="_blank">Open live ↗</a></div><iframe title="Esmer public site preview" src="../"></iframe></div></div>
+    </section>
+
+    <section class="admin-view" id="view-music" data-admin-view="music" hidden><div class="panel full-panel"><div class="panel-head"><div><span class="admin-eyebrow">Catalog</span><h2>Releases</h2></div><button class="admin-primary" disabled>Add release</button></div><div class="content-list" id="release-list"></div></div></section>
+    <section class="admin-view" id="view-logs" data-admin-view="logs" hidden><div class="empty-professional"><span>LOGS / POSTS</span><h2>Published. Scheduled. Draft.</h2><p>The content-state workflow is ready for the tenant API; no fake posts are being stored in this branch.</p></div></section>
+    <section class="admin-view" id="view-media" data-admin-view="media" hidden><div class="panel full-panel"><div class="panel-head"><div><span class="admin-eyebrow">Library</span><h2>Media & rights</h2></div><button class="admin-primary" disabled>Upload</button></div><div class="rights-grid"><article><b>PORTRAITS</b><span>0 approved assets</span></article><article><b>LIVE</b><span>0 approved assets</span></article><article><b>STUDIO</b><span>Capture pending</span></article><article><b>RELEASES</b><span>Platform / embed only</span></article></div><p class="rights-note">Nothing moves public until its rights state is explicit: Esmer-owned, McCluster-created/licensed, platform embed only, press reference only, or do not publish.</p></div></section>
+    <section class="admin-view" id="view-bookings" data-admin-view="bookings" hidden><div class="empty-professional"><span>BOOKINGS</span><h2>Inquiry pipeline</h2><p>New → needs reply → qualified → date proposed → confirmed → completed. Live inquiries appear after the tenant endpoint authorizes this owner.</p></div></section>
+    <section class="admin-view" id="view-contacts" data-admin-view="contacts" hidden><div class="empty-professional"><span>CONTACTS</span><h2>People around the work.</h2><p>Searchable contacts and last interaction will be read from McCluster's tenant-scoped CRM.</p></div></section>
+    <section class="admin-view" id="view-analytics" data-admin-view="analytics" hidden><div class="empty-professional"><span>ANALYTICS</span><h2>Only metrics that change a decision.</h2><p>Visits, top pages, referrals, Book conversion and listening clicks — without turning the owner console into an analyst workstation.</p></div></section>
+    <section class="admin-view" id="view-press" data-admin-view="press" hidden><div class="empty-professional"><span>PRESS / SEO</span><h2>First-party authority.</h2><p>Verified sources, canonical identity and backlink state remain review-gated where they can affect Justin Esmer's public entity graph.</p></div></section>
+    <section class="admin-view" id="view-network" data-admin-view="network" hidden><div class="empty-professional"><span>MCCLUSTER NETWORK</span><h2>Opt-in connections only.</h2><p>No other client's private tenant data is exposed here. Network-visible features remain explicit publish surfaces.</p></div></section>
+    <section class="admin-view" id="view-settings" data-admin-view="settings" hidden><div class="panel full-panel"><div class="panel-head"><div><span class="admin-eyebrow">Account</span><h2>Settings</h2></div></div><div class="settings-list"><div><span>Owner email</span><strong>justinesmer@gmail.com</strong></div><div><span>Tenant</span><strong>esmer</strong></div><div><span>Authentication</span><strong>McCluster / Supabase</strong></div><div><span>Public domain</span><strong>esmer.mccluster.org</strong></div></div></div></section>
+  </main>
+
+  <nav class="admin-mobile-nav" aria-label="Owner console mobile navigation"><button data-view="overview" aria-current="page">Home</button><button data-view="site">Site</button><button data-view="bookings">Bookings</button><button data-view="media">Media</button><button data-view="more">More</button></nav>
+  <div class="more-sheet" id="more-sheet" hidden><button data-view="music">Music</button><button data-view="logs">Logs</button><button data-view="contacts">Contacts</button><button data-view="analytics">Analytics</button><button data-view="press">Press / SEO</button><button data-view="network">Network</button><button data-view="settings">Settings</button></div>
+</div>
+
+<script src="../js/mcc-auth.js"></script>
+<script src="./js/api.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>

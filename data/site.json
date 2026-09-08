@@ -2,8 +2,8 @@
   "version": 1,
   "updated": "2026-09-04",
   "_canonicalOriginNote": "TODO — CONFIRM BEFORE DEPLOYMENT. docs/AUTHORITY-LINK-GRAPH.md records that Cherry Tape Magazine and Space Ballroom already link Justin Esmer to https://www.esmermusic.com/. That is why it is the default here. It is NOT confirmed that Justin controls the domain. Confirm control first. If a different hostname is chosen, change this one value and 301 the old host — do not let the existing inbound links die.",
-  "canonicalOrigin": "https://www.esmermusic.com",
-  "canonicalOriginConfirmed": false,
+  "canonicalOrigin": "https://esmer.mccluster.org",
+  "canonicalOriginConfirmed": true,
   "entityId": "#justin-esmer",
   "publicName": "Justin Esmer",
   "artistName": "Esmer",
@@ -478,5 +478,6 @@
       }
     ],
     "default": "flexible"
-  }
+  },
+  "canonicalOriginNote": "Selected 2026-09-08. esmer.mccluster.org is served by GitHub Pages from this repo and is controlled by McCluster, so it needed no confirmation from the client. esmermusic.com is the domain existing press already links to; ownership is still unknown (see data/domain-state.json). If Justin confirms control of it, switch this value, rebuild, and 301 from here so the inbound-link equity follows."
 }

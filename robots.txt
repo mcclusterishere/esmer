@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://esmer.mccluster.org/sitemap.xml
+Sitemap: https://mcclusterishere.github.io/esmer/sitemap.xml

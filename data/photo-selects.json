@@ -1,0 +1,81 @@
+{
+  "source_folder": "https://drive.google.com/drive/folders/1bOU_yffsmtb0OtFCbexS7LaV_3oT8ELg",
+  "policy": {
+    "raw_originals": "Remain untouched in Google Drive and are the archival masters.",
+    "retouching": "No beauty retouching or generative edits. Preserve the red/black studio palette and natural skin texture.",
+    "desktop_export": "5120px longest edge, JPEG quality 98, 4:4:4, progressive.",
+    "mobile_export": "2560px longest edge, JPEG quality 96, 4:4:4, progressive."
+  },
+  "primary": [
+    {
+      "rank": 1,
+      "file": "_DSC9651.ARW",
+      "drive_file_id": "1Qs_ilsD1NhF1Nq6hkxjp0dBkxaxlc44t",
+      "role": "hero",
+      "placement": "Homepage hero / wide masthead",
+      "rotation_degrees_clockwise": 0,
+      "crop": "16:9 or 21:9; keep keyboard leading line and face right-of-center"
+    },
+    {
+      "rank": 2,
+      "file": "_DSC9628.ARW",
+      "drive_file_id": "1jzQlZ3Mt4A2jusHctmitlyHkgJ5L2jNM",
+      "role": "artist-portrait",
+      "placement": "Artist/about portrait or opening editorial image",
+      "rotation_degrees_clockwise": 0,
+      "crop": "3:2 or 4:3; preserve cymbal framing"
+    },
+    {
+      "rank": 3,
+      "file": "_DSC9612.ARW",
+      "drive_file_id": "177RS3Y1BbfPtSS202Z9C9hnjDv7kaf2Q",
+      "role": "studio-process",
+      "placement": "The Room / production-process section",
+      "rotation_degrees_clockwise": 0,
+      "crop": "Wide 3:2; retain mic, DAW, monitors and guitar neck"
+    },
+    {
+      "rank": 4,
+      "file": "_DSC9653.ARW",
+      "drive_file_id": "1CgLYKX7vx0r2rBc0BOdINqmDOncg_Dbu",
+      "role": "mobile-portrait",
+      "placement": "Mobile hero alternate / vertical process panel",
+      "rotation_degrees_clockwise": 90,
+      "crop": "Native vertical; minimal crop"
+    },
+    {
+      "rank": 5,
+      "file": "_DSC9645.ARW",
+      "drive_file_id": "1WnHNW2Cdj2YXgXOWdeLzd9VIC7HW7mok",
+      "role": "performance-action",
+      "placement": "Musicianship / drums / live-process section",
+      "rotation_degrees_clockwise": 0,
+      "crop": "3:2; keep cymbals and both sticks"
+    },
+    {
+      "rank": 6,
+      "file": "_DSC9622.ARW",
+      "drive_file_id": "1M4yITAy38rNpMLPthmbR4hhnICSkpxEC",
+      "role": "detail-process",
+      "placement": "Process/detail inset or archive card",
+      "rotation_degrees_clockwise": 0,
+      "crop": "Wide 3:2; prioritize hands and DAW screen"
+    }
+  ],
+  "alternates": [
+    {
+      "rank": 7,
+      "file": "_DSC9649.ARW",
+      "drive_file_id": "1eijvCW4Coq4p-jsbLzWx_tg5g_tWLccL",
+      "role": "alternate-hero",
+      "placement": "Alternate cinematic hero / release editorial"
+    },
+    {
+      "rank": 8,
+      "file": "_DSC9614.ARW",
+      "drive_file_id": "18ch_SBzzkesGNKQT3SzILW-RrJdbWeFy",
+      "role": "candid",
+      "placement": "About/process candid"
+    }
+  ]
+}

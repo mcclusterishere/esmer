@@ -2,7 +2,7 @@
   "version": 1,
   "updated": "2026-09-04",
   "_canonicalOriginNote": "TODO — CONFIRM BEFORE DEPLOYMENT. docs/AUTHORITY-LINK-GRAPH.md records that Cherry Tape Magazine and Space Ballroom already link Justin Esmer to https://www.esmermusic.com/. That is why it is the default here. It is NOT confirmed that Justin controls the domain. Confirm control first. If a different hostname is chosen, change this one value and 301 the old host — do not let the existing inbound links die.",
-  "canonicalOrigin": "https://esmer.mccluster.org",
+  "canonicalOrigin": "https://mcclusterishere.github.io/esmer",
   "canonicalOriginConfirmed": true,
   "entityId": "#justin-esmer",
   "publicName": "Justin Esmer",
@@ -479,5 +479,5 @@
     ],
     "default": "flexible"
   },
-  "canonicalOriginNote": "Selected 2026-09-08. esmer.mccluster.org is served by GitHub Pages from this repo and is controlled by McCluster, so it needed no confirmation from the client. esmermusic.com is the domain existing press already links to; ownership is still unknown (see data/domain-state.json). If Justin confirms control of it, switch this value, rebuild, and 301 from here so the inbound-link equity follows."
+  "canonicalOriginNote": "Serving from GitHub Pages at mcclusterishere.github.io/esmer as of 2026-09-08. esmer.mccluster.org is the intended host and its CNAME is ready to restore, but until the DNS record exists Pages 301s there and the site is unreachable — and a canonical pointing at a host that does not resolve tells search engines the real page is nowhere. When the DNS CNAME (esmer -> mcclusterishere.github.io) is live: restore the CNAME file, set this to https://esmer.mccluster.org, rebuild. Asset and link paths are relative, so they need no change either way. esmermusic.com remains the long-term target if the client confirms he controls it."
 }

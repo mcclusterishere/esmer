@@ -190,9 +190,22 @@ const releaseSchema = (r) => ({
 /* ---------- shared partials ---------- */
 
 function coverSlot(r, cls = 'release__cover') {
-  /* A reference URL is not a rights clearance (docs/MEDIA-MANIFEST.json), so
-     the reference artwork is never rendered. Until Esmer supplies master art
-     the cover is a typographic plate. */
+  /* Release covers are served from Apple's artwork CDN, for releases matched
+     to the canonical artist id 1542619015 only. MEDIA-MANIFEST.json's own
+     shipStatus says "use platform embed/link or Esmer-supplied master
+     artwork", and every cover here links straight to that release on Apple
+     Music — this is the platform-link case, not rehosting: nothing is copied
+     into the repo and Apple serves the bytes.
+
+     This is the ONE media category that is allowed to ship without Esmer
+     handing over files. Press photos are not (doNotShipUnlicensedPressPhotos),
+     studio media is not (noStockSubstitutesForMissingStudioMedia), and no
+     image of a person may be used unless it is anchored to the identity lock.
+     If Esmer supplies master art, it overrides these
+     (clientSuppliedAndEsmerApprovedAssetsOverrideRemoteReferences).
+
+     The typographic plate below remains the fallback for anything with no
+     artwork, so a release added without art degrades rather than breaking. */
   if (r.artwork) {
     return `<div class="${cls}"><img src="${esc(r.artwork)}" alt="${esc(r.title)} cover artwork" loading="lazy" width="600" height="600"></div>`;
   }
@@ -753,10 +766,41 @@ const routes = [
   ...releases.map((r, i) => [`music/${r.slug}/index.html`, releasePage(r, i)])
 ];
 
+/**
+ * Rewrite root-absolute internal links to page-relative ones.
+ *
+ * Every template above writes `/css/site.css`, `/music/`, and so on.
+ * That is only correct when the site is served from the root of a
+ * domain. On GitHub Pages a PROJECT site is served from a subpath —
+ * mcclusterishere.github.io/esmer/ — where `/css/site.css` resolves
+ * against the wrong origin root and the page arrives with no stylesheet
+ * and every link dead.
+ *
+ * Making the paths relative to each page fixes it WITHOUT pinning the
+ * site to one host: the same build then works at a subpath, at a
+ * custom-domain root, and from a file:// preview, with no flag to set
+ * and no rebuild when the domain changes. That matters here because the
+ * canonical hostname is genuinely still undecided.
+ *
+ * Only href/src attributes are touched. Canonical URLs, OG tags,
+ * structured data and the sitemap stay absolute — they must be, and
+ * they are built from ORIGIN separately.
+ */
+function relativise(html, rel) {
+  // 'music/heather/index.html' -> 2 levels deep; 'index.html' -> 0.
+  const depth = rel.split('/').length - 1;
+  const up = depth === 0 ? './' : '../'.repeat(depth);
+
+  return html.replace(
+    /\b(href|src)="\/([^"]*)"/g,
+    (_m, attr, path) => `${attr}="${up}${path}"`
+  );
+}
+
 for (const [rel, html] of routes) {
   const out = join(ROOT, rel);
   mkdirSync(dirname(out), { recursive: true });
-  writeFileSync(out, html);
+  writeFileSync(out, relativise(html, rel));
 }
 
 /* sitemap + robots */

@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Book — Esmer</title>
+<meta name="description" content="Guitar, voice, production and songwriting lessons with Justin Esmer, in person in Connecticut or online — plus recording, session support, performance and collaboration.">
+<link rel="canonical" href="https://esmer.mccluster.org/book/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Esmer">
+<meta property="og:title" content="Book — Esmer">
+<meta property="og:description" content="Guitar, voice, production and songwriting lessons with Justin Esmer, in person in Connecticut or online — plus recording, session support, performance and collaboration.">
+<meta property="og:url" content="https://esmer.mccluster.org/book/">
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="theme-color" content="#0b0b0c">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://esmer.mccluster.org/#justin-esmer",
+  "name": "Justin Esmer",
+  "alternateName": "Esmer",
+  "url": "https://esmer.mccluster.org/",
+  "jobTitle": [
+    "Singer-songwriter",
+    "Producer",
+    "Multi-instrumentalist",
+    "Music teacher"
+  ],
+  "sameAs": [
+    "https://music.apple.com/us/artist/esmer/1542619015"
+  ],
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Connecticut, United States"
+  }
+}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<main id="main">
+
+<section class="band band--tight">
+  <div class="wrap">
+    <p class="eyebrow">Book</p>
+    <h1 class="h-section">Start an inquiry</h1>
+    <p class="lede">Whether you want to learn or you want to record — tell Esmer what you need. He replies by email.</p>
+    <p>He teaches guitar, voice, production and songwriting, in person in Connecticut or online.</p>
+  </div>
+</section>
+
+<section class="band band--tight">
+  <div class="wrap">
+    <form class="form" data-book-form
+          data-endpoint="https://api.mccluster.org/v1/inquiries"
+          data-org="esmer"
+          data-timing-label="When are you hoping to start?"
+          data-account-endpoint="https://api.mccluster.org/v1/account/start"
+          
+          method="post" action="https://api.mccluster.org/v1/inquiries">
+
+      <style>@supports selector(:has(*)){.form:has(#want-lessons:checked) [data-branch="lessons"]{display:block}}@supports selector(:has(*)){.form:has(#want-recording:checked) [data-branch="recording"]{display:block}}@supports selector(:has(*)){.form:has(#want-production:checked) [data-branch="production"]{display:block}}@supports selector(:has(*)){.form:has(#want-engineering:checked) [data-branch="engineering"]{display:block}}@supports selector(:has(*)){.form:has(#want-instrumental:checked) [data-branch="instrumental"]{display:block}}@supports selector(:has(*)){.form:has(#want-live:checked) [data-branch="live"]{display:block}}@supports selector(:has(*)){.form:has(#want-collaboration:checked) [data-branch="collaboration"]{display:block}}</style>
+
+      <fieldset class="fieldset">
+        <legend class="fieldset__legend">What do you need?</legend>
+        <div class="choices">
+          <label class="choice">
+            <input type="radio" name="want" id="want-lessons" value="Lessons / teaching" checked>
+            <span>Lessons / teaching</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" id="want-recording" value="Recording">
+            <span>Recording</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" id="want-production" value="Production">
+            <span>Production</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" id="want-engineering" value="Engineering / session support">
+            <span>Engineering / session support</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" id="want-instrumental" value="Instrumental performance">
+            <span>Instrumental performance</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" id="want-live" value="Live performance">
+            <span>Live performance</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" id="want-collaboration" value="Collaboration / feature">
+            <span>Collaboration / feature</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="want" id="want-other" value="Something else">
+            <span>Something else</span>
+          </label>
+        </div>
+      </fieldset>
+
+      
+      <div class="branch" data-branch="lessons">
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">What would you like to work on?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="checkbox"
+                     name="lessons.subject"
+                     value="Guitar">
+              <span>Guitar</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox"
+                     name="lessons.subject"
+                     value="Voice">
+              <span>Voice</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox"
+                     name="lessons.subject"
+                     value="Production / recording">
+              <span>Production / recording</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox"
+                     name="lessons.subject"
+                     value="Songwriting">
+              <span>Songwriting</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox"
+                     name="lessons.subject"
+                     value="Not sure yet">
+              <span>Not sure yet</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">In person or online?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.format"
+                     value="In person">
+              <span>In person</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.format"
+                     value="Online">
+              <span>Online</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.format"
+                     value="Either" checked>
+              <span>Either</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">Where are you starting from?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.level"
+                     value="Completely new">
+              <span>Completely new</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.level"
+                     value="Some experience">
+              <span>Some experience</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.level"
+                     value="Already playing">
+              <span>Already playing</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.level"
+                     value="Rather not say" checked>
+              <span>Rather not say</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">How often?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.cadence"
+                     value="Weekly">
+              <span>Weekly</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.cadence"
+                     value="Every couple of weeks">
+              <span>Every couple of weeks</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.cadence"
+                     value="A one-off">
+              <span>A one-off</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="lessons.cadence"
+                     value="Not sure yet" checked>
+              <span>Not sure yet</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      
+      <div class="branch" data-branch="recording">
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">What are you recording?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="recording.scope"
+                     value="A single">
+              <span>A single</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="recording.scope"
+                     value="An EP">
+              <span>An EP</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="recording.scope"
+                     value="An album">
+              <span>An album</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="recording.scope"
+                     value="A demo">
+              <span>A demo</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="recording.scope"
+                     value="Not sure yet" checked>
+              <span>Not sure yet</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">Where is it up to?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="recording.stage"
+                     value="Still an idea">
+              <span>Still an idea</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="recording.stage"
+                     value="Written, not recorded" checked>
+              <span>Written, not recorded</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="recording.stage"
+                     value="Partly recorded">
+              <span>Partly recorded</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="recording.stage"
+                     value="Recorded, needs finishing">
+              <span>Recorded, needs finishing</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      
+      <div class="branch" data-branch="production">
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">What are you starting with?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="production.start"
+                     value="Nothing yet — from scratch">
+              <span>Nothing yet — from scratch</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="production.start"
+                     value="Demos">
+              <span>Demos</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="production.start"
+                     value="Stems that need finishing">
+              <span>Stems that need finishing</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="production.start"
+                     value="Not sure yet" checked>
+              <span>Not sure yet</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">How much of it?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="production.scope"
+                     value="One song" checked>
+              <span>One song</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="production.scope"
+                     value="A few songs">
+              <span>A few songs</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="production.scope"
+                     value="A whole project">
+              <span>A whole project</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      
+      <div class="branch" data-branch="engineering">
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">What kind of session?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="engineering.kind"
+                     value="Tracking">
+              <span>Tracking</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="engineering.kind"
+                     value="Mixing">
+              <span>Mixing</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="engineering.kind"
+                     value="A live session">
+              <span>A live session</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="engineering.kind"
+                     value="Not sure yet" checked>
+              <span>Not sure yet</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">Where?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="engineering.where"
+                     value="Esmer&#39;s studio">
+              <span>Esmer&#39;s studio</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="engineering.where"
+                     value="My space">
+              <span>My space</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="engineering.where"
+                     value="Remotely">
+              <span>Remotely</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="engineering.where"
+                     value="Not sure yet" checked>
+              <span>Not sure yet</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      
+      <div class="branch" data-branch="instrumental">
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">What do you need played?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="checkbox"
+                     name="instrumental.need"
+                     value="Guitar">
+              <span>Guitar</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox"
+                     name="instrumental.need"
+                     value="Bass">
+              <span>Bass</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox"
+                     name="instrumental.need"
+                     value="Keys">
+              <span>Keys</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox"
+                     name="instrumental.need"
+                     value="Drums">
+              <span>Drums</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox"
+                     name="instrumental.need"
+                     value="Vocals">
+              <span>Vocals</span>
+            </label>
+            <label class="choice">
+              <input type="checkbox"
+                     name="instrumental.need"
+                     value="Something else">
+              <span>Something else</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">For what?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="instrumental.forwhat"
+                     value="A recording" checked>
+              <span>A recording</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="instrumental.forwhat"
+                     value="A live date">
+              <span>A live date</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="instrumental.forwhat"
+                     value="Both">
+              <span>Both</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      
+      <div class="branch" data-branch="live">
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">What are you booking?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="live.shape"
+                     value="Solo">
+              <span>Solo</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="live.shape"
+                     value="Full band">
+              <span>Full band</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="live.shape"
+                     value="Not sure yet" checked>
+              <span>Not sure yet</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">What is the occasion?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="live.occasion"
+                     value="A venue show" checked>
+              <span>A venue show</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="live.occasion"
+                     value="A private event">
+              <span>A private event</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="live.occasion"
+                     value="A festival or bill">
+              <span>A festival or bill</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="live.occasion"
+                     value="Something else">
+              <span>Something else</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      
+      <div class="branch" data-branch="collaboration">
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">What kind?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="collaboration.kind"
+                     value="A feature">
+              <span>A feature</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="collaboration.kind"
+                     value="A co-write">
+              <span>A co-write</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="collaboration.kind"
+                     value="Production">
+              <span>Production</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="collaboration.kind"
+                     value="Not sure yet" checked>
+              <span>Not sure yet</span>
+            </label>
+          </div>
+        </fieldset>
+        <fieldset class="fieldset">
+          <legend class="fieldset__legend">Is there something to hear yet?</legend>
+          <div class="choices">
+            <label class="choice">
+              <input type="radio"
+                     name="collaboration.stage"
+                     value="Yes — link is in my message">
+              <span>Yes — link is in my message</span>
+            </label>
+            <label class="choice">
+              <input type="radio"
+                     name="collaboration.stage"
+                     value="Not yet" checked>
+              <span>Not yet</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <fieldset class="fieldset">
+        <legend class="fieldset__legend">When are you hoping to start?</legend>
+        <div class="choices">
+          <label class="choice">
+            <input type="radio" name="timing" value="As soon as possible">
+            <span>As soon as possible</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="timing" value="Next few weeks">
+            <span>Next few weeks</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="timing" value="In a few months">
+            <span>In a few months</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="timing" value="Flexible" checked>
+            <span>Flexible</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="bk-name">Your name</label>
+        <input class="input" id="bk-name" name="name" type="text" autocomplete="name" required maxlength="200">
+      </div>
+
+      <div class="field">
+        <label for="bk-email">Email</label>
+        <input class="input" id="bk-email" name="email" type="email" autocomplete="email" required maxlength="320">
+      </div>
+
+      <div class="field">
+        <label for="bk-note">The project</label>
+        <textarea class="textarea" id="bk-note" name="note" rows="5" maxlength="4000"
+          placeholder="Dates, where, what you are working on."></textarea>
+      </div>
+
+      <!-- Honeypot. Hidden from people, irresistible to bots. -->
+      <div class="field" aria-hidden="true" style="position:absolute;left:-9999px">
+        <label for="bk-company">Company</label>
+        <input class="input" id="bk-company" name="company" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button class="btn" type="submit">Send inquiry</button>
+      <p class="form__status" role="status" aria-live="polite"></p>
+    </form>
+
+    <!-- Shown in place of the form once the control plane has confirmed the
+         inquiry. Never shown on a failure: an account offer on top of a
+         message that did not send would be a lie about the first half. -->
+    <div class="sent" data-sent hidden>
+      <p class="eyebrow">Sent</p>
+      <h2 class="h-section">Your message is with Esmer.</h2>
+      <p class="lede">He replies by email.</p>
+
+      <div class="sent__account">
+        <h3 class="h-sub">Keep the conversation</h3>
+        <p>Make an account and this thread stays in one place — his reply, your
+        details, and anything you send next. No password: we email you a link.</p>
+        <div class="actions">
+          <!-- Hidden until the script confirms Google is enabled on the
+               McCluster project. It is the same McCluster account either
+               way — Esmer's site does not mint its own. -->
+          <button class="btn" type="button" data-account-google hidden>Continue with Google</button>
+          <button class="btn btn--ghost" type="button" data-account-start>Email me a sign-in link</button>
+          <a class="btn btn--ghost" href="/">Not now</a>
+        </div>
+        <p class="form__status" role="status" aria-live="polite" data-account-status></p>
+      </div>
+    </div>
+
+    <p class="meta" style="margin-top:3rem;max-width:46ch;line-height:1.9">
+      Rates are agreed directly with Esmer. Nothing is charged through this form.
+    </p>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__links">
+      <a href="/music/">Music</a>
+      <a href="/logs/">Logs</a>
+      <a href="/press/">Press</a>
+      <a href="/book/">Book</a>
+      <a href="https://music.apple.com/us/artist/esmer/1542619015" target="_blank" rel="noopener">Apple Music</a>
+    </div>
+    <p class="foot__attr">
+      &copy; 2026 Justin Esmer.
+      <a href="https://matthew.mccluster.org/" target="_blank" rel="noopener">Powered by McCluster</a>
+    </p>
+  </div>
+</footer>
+<div class="listening" data-open="false" aria-live="polite">
+  <div class="listening__inner">
+    <div class="listening__art" aria-hidden="true"></div>
+    <div class="listening__text">
+      <div class="listening__title"></div>
+      <div class="listening__sub"></div>
+    </div>
+    <a class="listening__go" href="#" target="_blank" rel="noopener">Listen</a>
+    <button class="listening__close" type="button" aria-label="Dismiss">&times;</button>
+  </div>
+</div>
+<nav class="nav" aria-label="Primary">
+  <div class="nav__inner">
+    <a class="nav__item" href="/music/"><span class="nav__dot" aria-hidden="true"></span>Music</a>
+    <a class="nav__item" href="/"><span class="nav__dot" aria-hidden="true"></span>Esmer</a>
+    <a class="nav__item" href="/book/" aria-current="page"><span class="nav__dot" aria-hidden="true"></span>Book</a>
+  </div>
+</nav>
+<script src="/js/app.js" defer></script>
+<script src="/js/mcc-auth.js" defer></script>
+<script src="/js/book.js" defer></script>
+</body>
+</html>

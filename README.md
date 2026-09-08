@@ -113,6 +113,84 @@ The admin must work on phone and desktop. `docs/ADMIN-BACKEND-DESIGN.md` defines
 - GitHub issue `#1` tracks the first public-shell and owner-console milestones.
 - Studio media, final 360 capture, Marble/spatial world, final services, rates, confirmed canonical-domain control, booking destination, approved artist assets, and final PRIM3 credit language are pending.
 
+## Build — Milestone A shipped
+
+The public shell is implemented. Run the generator after editing anything in
+`data/`:
+
+```sh
+node scripts/build.mjs
+```
+
+Output is committed so GitHub Pages serves it with no build step.
+
+```
+index.html            Esmer — home, the cinematic scroll
+music/                catalog + a crawlable page per release
+press/                press & features source hub
+logs/                 the archive
+book/                 inquiry flow
+css/site.css          the design system
+js/app.js             shell: reveal, scroll progress, listening bar
+js/book.js            inquiry submission
+data/site.json        canonical origin, sameAs, API, service list
+data/releases.json    the catalog — one source of truth
+scripts/build.mjs     renders every route from data/
+```
+
+Every route is real crawlable HTML rather than a client-rendered shell,
+because `docs/AUTHORITY-LINK-GRAPH.md` needs `/`, `/music`, `/music/<slug>`,
+`/press`, `/logs` and `/book` addressable with meaningful DOM.
+
+### Verified on this build
+
+- WCAG 2.1 AA clean — axe, every page, zero violations
+- fully readable and navigable with JavaScript disabled
+- no horizontal overflow at 320 / 390 / 430 px
+- `prefers-reduced-motion` honoured; no 3D in the critical path
+- booking form fails honestly — it never reports success it did not get
+- Book is a conversation tree — every service category carries its own follow-up
+  questions and only the chosen branch is on screen, via `:has()` rather than
+  JavaScript. Answers are transcribed into the lead so an inquiry arrives
+  answerable instead of needing three emails to become one
+- after a confirmed send, a passwordless account offer so the visitor keeps the
+  thread — never offered when the send failed
+- sign-in is a **McCluster** account, shared with every McCluster-powered site —
+  Google (PKCE/S256) or an email link, with `/auth/` completing the redirect
+
+### Deliberately absent
+
+Gaps left open on purpose; filling them by guessing breaks this repo's rules.
+
+| Gap | Why | Unblocked by |
+| --- | --- | --- |
+| Covers, portraits, studio imagery | A reference URL is not a rights clearance (`docs/MEDIA-MANIFEST.json`); no stock substitutes | Esmer supplying masters |
+| Logo | `CLAUDE.md` §15 — never fabricate or redraw one; typography is the fallback | Esmer supplying brand art |
+| Typeface | None approved; unlicensed fonts forbidden. System stack, swappable via one CSS token | Approval |
+| Colour accent | Palette is achromatic so Esmer's own artwork supplies the colour | Artwork |
+| Rates | `CLAUDE.md` §16 — do not guess | Esmer |
+| Lesson rates, length, age/level range | Teaching, its four subjects and both formats are confirmed (Matthew, 2026-09-04). Rates, lesson length and any age or level range are not. In-person is described as Connecticut only — the studio locality stays private | Esmer |
+| Fallback contact address | Booking destination is on the approval list; shown only if the API fails | Esmer |
+| Studio room, gear, address | Not captured; never invented | On-site capture |
+| Spatial / VR studio | Slot carved into the architecture, loads no 3D | Capture |
+| Logs in Esmer's voice | Interview material is personal and wants his wording | Esmer |
+
+Placeholders render as labelled empty slots rather than hidden, so nothing
+ships looking finished when it is not.
+
+### Before deployment — canonical domain
+
+`data/site.json` sets `canonicalOrigin` to `https://www.esmermusic.com` and
+marks it **unconfirmed**. Confirm Justin controls it first. If a different
+hostname is chosen, change that one value, re-run the build, and 301 the old
+host so the documented inbound links are not dropped.
+
+### Not yet built — Milestone B
+
+The private owner console at `/admin` (`docs/ADMIN-BACKEND-DESIGN.md`,
+`docs/ADMIN-MOBBIN-REFERENCE-BOARD.md`). `docs/BUILD-START-HERE.md` asks for
+a visual/interaction review after Milestone A before that work starts.
+
 ## On-site capture checklist
 
 Capture enough material to build both a conventional cinematic site and a later spatial layer:

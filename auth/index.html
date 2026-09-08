@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Signing in — Esmer</title>
+<meta name="description" content="Completing your McCluster sign-in.">
+<link rel="canonical" href="https://esmer.mccluster.org/auth/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Esmer">
+<meta property="og:title" content="Signing in — Esmer">
+<meta property="og:description" content="Completing your McCluster sign-in.">
+<meta property="og:url" content="https://esmer.mccluster.org/auth/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/site.css">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<main id="main">
+
+<section class="band arrival">
+  <div class="wrap">
+    <p class="eyebrow">McCluster account</p>
+    <h1 class="h-section" id="auth-head">Signing you in…</h1>
+    <p class="lede" id="auth-body">One moment.</p>
+  </div>
+</section>
+<script src="/js/mcc-auth.js" defer></script>
+<script defer>
+  window.addEventListener('load', function () {
+    var head = document.getElementById('auth-head');
+    var body = document.getElementById('auth-body');
+    function backTo() {
+      var raw = new URLSearchParams(location.search).get('next') || '/book/';
+      /* Same-origin only. An absolute URL here would make the sign-in flow
+         an open redirect that arrives carrying a fresh session. */
+      return (raw.charAt(0) === '/' && raw.charAt(1) !== '/') ? raw : '/book/';
+    }
+    window.MCC.complete().then(function (user) {
+      if (!user) { head.textContent = 'Nothing to finish'; body.innerHTML = '<a href="/book/">Back to Book</a>'; return; }
+      head.textContent = 'You are signed in';
+      body.innerHTML = 'Taking you back…';
+      location.replace(backTo());
+    }).catch(function (error) {
+      head.textContent = 'That sign-in did not complete';
+      body.textContent = error.message || 'Please try again.';
+    });
+  });
+</script>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__links">
+      <a href="/music/">Music</a>
+      <a href="/logs/">Logs</a>
+      <a href="/press/">Press</a>
+      <a href="/book/">Book</a>
+      <a href="https://music.apple.com/us/artist/esmer/1542619015" target="_blank" rel="noopener">Apple Music</a>
+    </div>
+    <p class="foot__attr">
+      &copy; 2026 Justin Esmer.
+      <a href="https://matthew.mccluster.org/" target="_blank" rel="noopener">Powered by McCluster</a>
+    </p>
+  </div>
+</footer>
+<div class="listening" data-open="false" aria-live="polite">
+  <div class="listening__inner">
+    <div class="listening__art" aria-hidden="true"></div>
+    <div class="listening__text">
+      <div class="listening__title"></div>
+      <div class="listening__sub"></div>
+    </div>
+    <a class="listening__go" href="#" target="_blank" rel="noopener">Listen</a>
+    <button class="listening__close" type="button" aria-label="Dismiss">&times;</button>
+  </div>
+</div>
+<nav class="nav" aria-label="Primary">
+  <div class="nav__inner">
+    <a class="nav__item" href="/music/"><span class="nav__dot" aria-hidden="true"></span>Music</a>
+    <a class="nav__item" href="/"><span class="nav__dot" aria-hidden="true"></span>Esmer</a>
+    <a class="nav__item" href="/book/" aria-current="page"><span class="nav__dot" aria-hidden="true"></span>Book</a>
+  </div>
+</nav>
+<script src="/js/app.js" defer></script>
+</body>
+</html>

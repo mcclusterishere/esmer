@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Signing in — Esmer</title>
 <meta name="description" content="Completing your McCluster sign-in.">
-<link rel="canonical" href="https://esmer.mccluster.org/auth/">
+<link rel="canonical" href="https://mcclusterishere.github.io/esmer/auth/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Esmer">
 <meta property="og:title" content="Signing in — Esmer">
 <meta property="og:description" content="Completing your McCluster sign-in.">
-<meta property="og:url" content="https://esmer.mccluster.org/auth/">
+<meta property="og:url" content="https://mcclusterishere.github.io/esmer/auth/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#0b0b0c">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/site.css">
 
 </head>
 <body>
@@ -30,7 +30,7 @@
     <p class="lede" id="auth-body">One moment.</p>
   </div>
 </section>
-<script src="/js/mcc-auth.js" defer></script>
+<script src="../js/mcc-auth.js" defer></script>
 <script defer>
   window.addEventListener('load', function () {
     var head = document.getElementById('auth-head');
@@ -42,7 +42,7 @@
       return (raw.charAt(0) === '/' && raw.charAt(1) !== '/') ? raw : '/book/';
     }
     window.MCC.complete().then(function (user) {
-      if (!user) { head.textContent = 'Nothing to finish'; body.innerHTML = '<a href="/book/">Back to Book</a>'; return; }
+      if (!user) { head.textContent = 'Nothing to finish'; body.innerHTML = '<a href="../book/">Back to Book</a>'; return; }
       head.textContent = 'You are signed in';
       body.innerHTML = 'Taking you back…';
       location.replace(backTo());
@@ -56,10 +56,10 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot__links">
-      <a href="/music/">Music</a>
-      <a href="/logs/">Logs</a>
-      <a href="/press/">Press</a>
-      <a href="/book/">Book</a>
+      <a href="../music/">Music</a>
+      <a href="../logs/">Logs</a>
+      <a href="../press/">Press</a>
+      <a href="../book/">Book</a>
       <a href="https://music.apple.com/us/artist/esmer/1542619015" target="_blank" rel="noopener">Apple Music</a>
     </div>
     <p class="foot__attr">
@@ -81,11 +81,11 @@
 </div>
 <nav class="nav" aria-label="Primary">
   <div class="nav__inner">
-    <a class="nav__item" href="/music/"><span class="nav__dot" aria-hidden="true"></span>Music</a>
-    <a class="nav__item" href="/"><span class="nav__dot" aria-hidden="true"></span>Esmer</a>
-    <a class="nav__item" href="/book/" aria-current="page"><span class="nav__dot" aria-hidden="true"></span>Book</a>
+    <a class="nav__item" href="../music/"><span class="nav__dot" aria-hidden="true"></span>Music</a>
+    <a class="nav__item" href="../"><span class="nav__dot" aria-hidden="true"></span>Esmer</a>
+    <a class="nav__item" href="../book/" aria-current="page"><span class="nav__dot" aria-hidden="true"></span>Book</a>
   </div>
 </nav>
-<script src="/js/app.js" defer></script>
+<script src="../js/app.js" defer></script>
 </body>
 </html>

@@ -753,10 +753,41 @@ const routes = [
   ...releases.map((r, i) => [`music/${r.slug}/index.html`, releasePage(r, i)])
 ];
 
+/**
+ * Rewrite root-absolute internal links to page-relative ones.
+ *
+ * Every template above writes `/css/site.css`, `/music/`, and so on.
+ * That is only correct when the site is served from the root of a
+ * domain. On GitHub Pages a PROJECT site is served from a subpath —
+ * mcclusterishere.github.io/esmer/ — where `/css/site.css` resolves
+ * against the wrong origin root and the page arrives with no stylesheet
+ * and every link dead.
+ *
+ * Making the paths relative to each page fixes it WITHOUT pinning the
+ * site to one host: the same build then works at a subpath, at a
+ * custom-domain root, and from a file:// preview, with no flag to set
+ * and no rebuild when the domain changes. That matters here because the
+ * canonical hostname is genuinely still undecided.
+ *
+ * Only href/src attributes are touched. Canonical URLs, OG tags,
+ * structured data and the sitemap stay absolute — they must be, and
+ * they are built from ORIGIN separately.
+ */
+function relativise(html, rel) {
+  // 'music/heather/index.html' -> 2 levels deep; 'index.html' -> 0.
+  const depth = rel.split('/').length - 1;
+  const up = depth === 0 ? './' : '../'.repeat(depth);
+
+  return html.replace(
+    /\b(href|src)="\/([^"]*)"/g,
+    (_m, attr, path) => `${attr}="${up}${path}"`
+  );
+}
+
 for (const [rel, html] of routes) {
   const out = join(ROOT, rel);
   mkdirSync(dirname(out), { recursive: true });
-  writeFileSync(out, html);
+  writeFileSync(out, relativise(html, rel));
 }
 
 /* sitemap + robots */
